@@ -1,0 +1,28 @@
+{
+  "name": "campr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sam-Marshall/CampR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sam-Marshall/CampR/issues"
+  },
+  "homepage": "https://github.com/Sam-Marshall/CampR#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "semantic-ui-react": "^0.71.0"
+  }
+}
