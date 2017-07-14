@@ -1,26 +1,57 @@
-// Include React
-var React = require("react");
+// React Dependencies
+const React = require('react');
+const ReactDOM = require('react-dom');
 
-// Creating the Main component
+// require components
+const Overview = require('./children/Overview');
+const CodeSnippet = require('./children/CodeSnippet');
+const Resources = require('./children/Resources');
+
 var Main = React.createClass({
-
-  // Here we render the function
   render: function() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="jumbotron">
-            <h2 className="text-center">CampR!</h2>
-            <p className="text-center">
-              <em>Dah Best</em>
-            </p>
-          </div>
+      <div className="wrapper">
+        <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header className="mdl-layout__header">
+            <div className="mdl-layout__header-row">
+
+              <span className="mdl-layout-title">CAMPR</span>
+              
+              <div className="mdl-layout-spacer"></div>
+
+              <nav className="mdl-navigation mdl-layout--large-screen-only">
+                <a className="mdl-navigation__link" href={""}>Link</a>
+                <a className="mdl-navigation__link" href={""}>Link</a>
+                <a className="mdl-navigation__link" href={""}>Link</a>
+                <a className="mdl-navigation__link" href={""}>Link</a>
+              </nav>
+            </div>
+          </header>
+        <div className="mdl-layout__drawer">
+          <span className="mdl-layout-title">CAMPR</span>
+          <nav className="mdl-navigation">
+            <a className="mdl-navigation__link" href={""}>Link</a>
+            <a className="mdl-navigation__link" href={""}>Link</a>
+            <a className="mdl-navigation__link" href={""}>Link</a>
+            <a className="mdl-navigation__link" href={""}>Link</a>
+          </nav>
         </div>
 
+        <main className="mdl-layout__content">
+          <div className="page-content">
+            <div className="mdl-grid">
+
+            <Overview />
+            <CodeSnippet />
+            <Resources />
+
+            </div>
+          </div>
+        </main>
       </div>
+    </div>
     );
   }
 });
 
-// Export the component back for use in other files
 module.exports = Main;

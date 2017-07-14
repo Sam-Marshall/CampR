@@ -1,0 +1,99 @@
+html, body, h1,h3, h4 {
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+h2, h3, h4 {
+  font-family: 'Averia Serif Libre', cursive;
+  font-style: italic;
+  margin: 0;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+display: none;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.mdl-layout__header {
+  background-color: white;
+}
+
+.mdl-layout-title {
+  color: black;
+  font-family: 'Averia Serif Libre', cursive;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.overview, .code-snippet, .resources {
+  height: calc(100vh - 64px - 32px);
+  overflow-y: scroll;
+}
+
+.overview {
+  padding: 30px;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #cecece;
+}
+
+/*Code snippet*/
+.code-snippet {
+  background-color: #ededed;
+
+}
+
+.mdl-tabs__tab {
+  font-family: 'Averia Serif Libre', cursive;
+  text-transform: initial;
+  font-size: 16px;
+}
+
+.mdl-tabs__tab.is-active:after {
+  background-color: red !important;
+}
+
+.mdl-tabs__tab-bar {
+  background-color: white;
+}
+
+.resources {
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: #cecece;
+}
+
+.external-sources {
+  height: 40%;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.comments {
+  height: 40%;
+  margin: 0;
+}
+
+.comments-content {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #cecece;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #cecece;
+}
+
+.moocs {
+  height: 10%;
+  margin: 0;
+}
