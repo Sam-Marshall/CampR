@@ -2,12 +2,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var BootcampSchema = new Schema({
-  // location: {
-  //   type: String
-  // },
-  // date: {
-  //   type: Date
-  // }
+//
 });
 
 var Bootcamp = mongoose.model("Bootcamp", BootcampSchema);
