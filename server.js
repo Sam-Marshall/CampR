@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 var logger = require("morgan");
 
 // Require Schema
-// var Bootcamp = require("./models/Bootcamp");
+var Bootcamp = require("./models/Bootcamp");
 
 // Create Instance of Express
 var app = express();
