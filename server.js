@@ -5,7 +5,11 @@ var mongoose = require("mongoose");
 var logger = require("morgan");
 
 // Require Schema
-var Bootcamp = require("./models/Bootcamp");
+// var Bootcamp = require("./models/Bootcamp");
+var Topic = require("./models/Topic");
+var Subtopic = require("./models/Subtopic");
+var Comment = require("./models/Comment");
+var Snippet = require("./models/Snippet");
 
 // Create Instance of Express
 var app = express();
