@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var TopicSchema = new Schema({
 
-    name: {
+    topic: {
         type: String
     },
     description: {

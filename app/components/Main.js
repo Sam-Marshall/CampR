@@ -1,6 +1,7 @@
 // React Dependencies
 const React = require('react');
 const ReactDOM = require('react-dom');
+const Link = require('react-router-dom').Link;
 
 // require components
 const Overview = require('./children/Overview');

@@ -5,7 +5,6 @@ var mongoose = require("mongoose");
 var logger = require("morgan");
 
 // Require Schema
-// var Bootcamp = require("./models/Bootcamp");
 var Topic = require("./models/Topic");
 var Subtopic = require("./models/Subtopic");
 var Comment = require("./models/Comment");
@@ -32,21 +31,47 @@ mongoose.connect("mongodb://localhost/campr");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
-  console.log("Mongoose Error: ", err);
+    console.log("Mongoose Error: ", err);
 });
 
 db.once("open", function() {
-  console.log("Mongoose connection successful.");
+    console.log("Mongoose connection successful.");
 });
 
 // -------------------------------------------------
 
 // Main "/" Route. This will redirect the user to our rendered React application
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "/public/index.html");
+});
+
+app.get("/topics", function(req, res) {
+
+    Topic.find({}, function(err, doc) {
+        if (err) {
+            console.log(error);
+        } else {
+            console.log(doc);
+        }
+
+    });
+
+});
+
+app.get("/:topic/subtopics", function(req, res) {
+
+    Topic.find({ "name": req.params.topic })
+        .populate("subtopic")
+        .exec(function(error, doc) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(doc);
+            }
+        });
 });
 
 // Listener
 app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
+    console.log("App listening on PORT: " + PORT);
 });
