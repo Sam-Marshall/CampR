@@ -5,7 +5,7 @@ const ReactDOM = require('react-dom');
 var Overview = React.createClass({
   render: function() {
     return (
-      <div className="mdl-cell mdl-cell--3-col mdl-color--white overview">
+      <div className="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-color--white overview">
         <h2>HTML & CSS</h2>
         <img className="mdl-cell mdl-cell--12-col" src={"https://www.macitynet.it/wp-content/uploads/2015/02/vr-keyboard-1024x856.png"} />
         <p>

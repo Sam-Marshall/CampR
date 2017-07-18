@@ -5,7 +5,7 @@ const ReactDOM = require('react-dom');
 var CodeSnippet = React.createClass({
   render: function() {
     return (
-          <div className="mdl-cell mdl-cell--5-col  code-snippet">
+          <div className="mdl-cell mdl-cell--5-col mdl-cell--12-col-tablet  code-snippet">
             <div className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
               <div className="mdl-tabs__tab-bar">
                   <a href={"#Exercise-1-panel"} className="mdl-tabs__tab is-active">Exercise-1</a>
