@@ -47,7 +47,7 @@ var Resources = React.createClass({
 
             <div className="mdl-grid comments">
               <div className="mdl-cell mdl-cell--12-col comments-content">
-                <h2>Comments</h2>
+                <h4>Comments</h4>
               </div>
             </div>
 

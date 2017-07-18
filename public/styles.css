@@ -74,6 +74,7 @@ display: none;
 
 .external-sources {
   height: 40%;
+  min-height: 400px;
   margin: 0;
   padding-top: 0;
   padding-bottom: 0;
@@ -81,6 +82,7 @@ display: none;
 
 .comments {
   height: 40%;
+  min-height: 400px;
   margin: 0;
 }
 
@@ -95,5 +97,6 @@ display: none;
 
 .moocs {
   height: 10%;
+  min-height: 100px;
   margin: 0;
 }
