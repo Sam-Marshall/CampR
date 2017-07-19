@@ -1,14 +1,34 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+module.exports = function(sequelize, DataTypes) {
 
-var CommentSchema = new Schema({
+    var Comment = sequelize.define("Comment", {
+        comment: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            field: 'createdAt',
+            defaultValue: sequelize.literal('NOW()')
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            field: 'updatedAt',
+            defaultValue: sequelize.literal('NOW()')
+        }
+    }, {
+        classMethods: {
+            associate: function(models) {
 
-    comment: {
-        type: String
-    }
+                this.belongsTo(models.Subtopic, {
+                    foreignKey: {
+                        name: 'subtopic_id',
+                        allowNull: false
+                    }
+                });
 
-});
+            }
+        }
+    });
 
-var Comment = mongoose.model("Comment", CommentSchema);
-
-module.exports = Comment;
+    return Comment;
+};

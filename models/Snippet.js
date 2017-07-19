@@ -1,20 +1,38 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+module.exports = function(sequelize, DataTypes) {
 
-var SnippetSchema = new Schema({
+    var Snippet = sequelize.define("Snippet", {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        code: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            field: 'createdAt',
+            defaultValue: sequelize.literal('NOW()')
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            field: 'updatedAt',
+            defaultValue: sequelize.literal('NOW()')
+        }
+    }, {
+        classMethods: {
+            associate: function(models) {
 
-    name: {
-        type: String
-    },
-    code: {
-        type: String
-    },
-    comment: [{
-        type: Schema.Types.ObjectId,
-        ref: "Comment"
-    }]
+                this.belongsTo(models.Subtopic, {
+                    foreignKey: {
+                        name: 'subtopic_id',
+                        allowNull: false
+                    }
+                });
 
-});
+            }
+        }
+    });
 
-var Snippet = mongoose.model("Snippet", SnippetSchema);
-module.exports = Snippet;
+    return Snippet;
+};

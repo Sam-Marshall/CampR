@@ -1,23 +1,45 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+module.exports = function(sequelize, DataTypes) {
 
-var SubtopicSchema = new Schema({
+    var Subtopic = sequelize.define("Subtopic", {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            field: 'createdAt',
+            defaultValue: sequelize.literal('NOW()')
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            field: 'updatedAt',
+            defaultValue: sequelize.literal('NOW()')
+        }
+    }, {
+        classMethods: {
+            associate: function(models) {
 
-    name: {
-        type: String
-    },
-    image: {
-        type: String
-    },
-    description: {
-        type: String
-    },
-    snippet: [{
-        type: Schema.Types.ObjectId,
-        ref: "Snippet"
-    }]
+                this.hasMany(models.Snippet, {
+                    foreignKey: 'subtopic_id',
+                    onDelete: "cascade"
+                });
 
-});
+                this.hasMany(models.Comment, {
+                    foreignKey: 'subtopic_id',
+                    onDelete: "cascade"
+                });
 
-var Subtopic = mongoose.model("Subtopic", SubtopicSchema);
-module.exports = Subtopic;
+            }
+        }
+    });
+
+    return Subtopic;
+};
