@@ -5,7 +5,7 @@ const ReactDOM = require('react-dom');
 var Resources = React.createClass({
   render: function() {
     return (
-      <div className="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-color--white  resources">
+      <div className="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white  resources">
 
             <div className="mdl-grid external-sources">
               <div className="mdl-cell mdl-cell--12-col">
