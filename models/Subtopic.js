@@ -37,6 +37,13 @@ module.exports = function(sequelize, DataTypes) {
                     onDelete: "cascade"
                 });
 
+                this.belongsTo(models.Topic, {
+                    foreignKey: {
+                        name: 'topic_id',
+                        allowNull: false
+                    }
+                });
+
             }
         }
     });

@@ -5,15 +5,15 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        paragrah1: {
+        paragraph1: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        paragrah2: {
+        paragraph2: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        paragrah3: {
+        paragraph3: {
             type: DataTypes.TEXT,
             allowNull: false
         },
