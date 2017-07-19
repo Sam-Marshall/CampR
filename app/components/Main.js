@@ -36,9 +36,9 @@ export default class Main extends React.Component{
         <div className="mdl-layout__drawer">
           <span className="mdl-layout-title">CAMPR</span>
           <nav className="mdl-navigation">
-            <a className="mdl-navigation__link" href={""} value="HTML">HTML</a>
-            <a className="mdl-navigation__link" href={""} value="CSS">CSS</a>
-            <a className="mdl-navigation__link" href={""} value="Javascript">Javascript</a>
+            <a className="mdl-navigation__link" onClik={""} value="HTML">HTML</a>
+            <a className="mdl-navigation__link" onClick={""} value="CSS">CSS</a>
+            <a className="mdl-navigation__link" onClick={""} value="Javascript">Javascript</a>
           </nav>
         </div>
 
