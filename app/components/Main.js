@@ -1,15 +1,20 @@
 // React Dependencies
-const React = require('react');
-const ReactDOM = require('react-dom');
-const Link = require('react-router-dom').Link;
+import React from 'react';
+import { withRouter } from 'react-router';
+import helpers from './utils/helpers';
+import { Link } from 'react-router-dom';
 
 // require components
 const Overview = require('./children/Overview');
 const CodeSnippet = require('./children/CodeSnippet');
 const Resources = require('./children/Resources');
 
-var Main = React.createClass({
-  render: function() {
+export default class Main extends React.Component{
+  constructor(){
+    super();
+    this.state = {};
+  }
+  render() {
     return (
       <div className="wrapper">
         <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -31,10 +36,9 @@ var Main = React.createClass({
         <div className="mdl-layout__drawer">
           <span className="mdl-layout-title">CAMPR</span>
           <nav className="mdl-navigation">
-            <a className="mdl-navigation__link" href={""}>Link</a>
-            <a className="mdl-navigation__link" href={""}>Link</a>
-            <a className="mdl-navigation__link" href={""}>Link</a>
-            <a className="mdl-navigation__link" href={""}>Link</a>
+            <a className="mdl-navigation__link" href={""} value="HTML">HTML</a>
+            <a className="mdl-navigation__link" href={""} value="CSS">CSS</a>
+            <a className="mdl-navigation__link" href={""} value="Javascript">Javascript</a>
           </nav>
         </div>
 
@@ -53,6 +57,4 @@ var Main = React.createClass({
     </div>
     );
   }
-});
-
-module.exports = Main;
+};
