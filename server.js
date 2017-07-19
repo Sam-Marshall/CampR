@@ -21,16 +21,18 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("./public"));
 
-// Main "/" Route. This will redirect the user to our rendered React application
-app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/public/index.html");
+app.get('/api', function(req, res) {
+    camprdb.Topic.findAll({})
+    .then(function(response) {
+        res.json(response)
+    });
 });
 
 app.get("/topics", function(req, res) {
 
     Topic.find({}, function(err, doc) {
         if (err) {
-            console.log(error);
+            console.log(err);
         } else {
             console.log(doc);
         }
@@ -43,13 +45,18 @@ app.get("/:topic/subtopics", function(req, res) {
 
     Topic.find({ "name": req.params.topic })
         .populate("subtopic")
-        .exec(function(error, doc) {
-            if (error) {
+        .exec(function(err, doc) {
+            if (err) {
                 console.log(error);
             } else {
                 console.log(doc);
             }
         });
+});
+
+// Main "/" Route. This will redirect the user to our rendered React application
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/public/index.html");
 });
 
 camprdb.sequelize.sync().then(function() {
