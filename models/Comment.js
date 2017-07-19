@@ -15,20 +15,17 @@ module.exports = function(sequelize, DataTypes) {
             field: 'updatedAt',
             defaultValue: sequelize.literal('NOW()')
         }
-    }, {
-        classMethods: {
-            associate: function(models) {
-
-                this.belongsTo(models.Subtopic, {
-                    foreignKey: {
-                        name: 'subtopic_id',
-                        allowNull: false
-                    }
-                });
-
-            }
-        }
     });
+
+    Comment.associate = function(models) {
+        this.belongsTo(models.Subtopic, {
+            foreignKey: {
+                name: 'subtopic_id',
+                allowNull: false
+            }
+        });
+
+    }
 
     return Comment;
 };

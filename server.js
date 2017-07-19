@@ -23,9 +23,9 @@ app.use(express.static("./public"));
 
 app.get('/api', function(req, res) {
     camprdb.Topic.findAll({})
-    .then(function(response) {
-        res.json(response)
-    });
+        .then(function(response) {
+            res.json(response)
+        });
 });
 
 app.get("/topics", function(req, res) {
@@ -59,7 +59,7 @@ app.get("/", function(req, res) {
     res.sendFile(__dirname + "/public/index.html");
 });
 
-camprdb.sequelize.sync().then(function() {
+camprdb.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {
         console.log("App listening on PORT: " + PORT);
     });

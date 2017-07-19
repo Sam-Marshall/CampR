@@ -31,18 +31,15 @@ module.exports = function(sequelize, DataTypes) {
             field: 'updatedAt',
             defaultValue: sequelize.literal('NOW()')
         }
-    }, {
-        classMethods: {
-            associate: function(models) {
-
-                this.hasMany(models.Subtopic, {
-                    foreignKey: 'topic_id',
-                    onDelete: "cascade"
-                });
-
-            }
-        }
     });
+
+    Topic.associate = function(models) {
+        this.hasMany(models.Subtopic, {
+            foreignKey: 'topic_id',
+            onDelete: "cascade"
+        });
+
+    }
 
     return Topic;
 };

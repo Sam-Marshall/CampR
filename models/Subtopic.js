@@ -23,30 +23,28 @@ module.exports = function(sequelize, DataTypes) {
             field: 'updatedAt',
             defaultValue: sequelize.literal('NOW()')
         }
-    }, {
-        classMethods: {
-            associate: function(models) {
 
-                this.hasMany(models.Snippet, {
-                    foreignKey: 'subtopic_id',
-                    onDelete: "cascade"
-                });
-
-                this.hasMany(models.Comment, {
-                    foreignKey: 'subtopic_id',
-                    onDelete: "cascade"
-                });
-
-                this.belongsTo(models.Topic, {
-                    foreignKey: {
-                        name: 'topic_id',
-                        allowNull: false
-                    }
-                });
-
-            }
-        }
     });
+
+    Subtopic.associate = function(models) {
+        this.belongsTo(models.Topic, {
+            foreignKey: {
+                name: 'topic_id',
+                allowNull: false
+            }
+        });
+
+        this.hasMany(models.Snippet, {
+            foreignKey: 'subtopic_id',
+            onDelete: "cascade"
+        });
+
+        this.hasMany(models.Comment, {
+            foreignKey: 'subtopic_id',
+            onDelete: "cascade"
+        });
+    }
+
 
     return Subtopic;
 };
