@@ -13,13 +13,13 @@ export default class Main extends React.Component{
     super();
     this.state = {
       topicId: "1",
-      subtopicId: "1",
+      subtopicId: "0",
       subtopicData: {}
     };
   }
 
   componentDidMount() {
-    helpers.getSubtopics(this.state.subtopicId)
+    helpers.getSubtopics(this.state.topicId)
     .then(function(response) {
       console.log(response.data);
       this.setState({
