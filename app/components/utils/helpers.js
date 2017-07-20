@@ -23,6 +23,10 @@ var helper = {
             .get(queryURL)
             .then(response => response.data.items.filter(i => i.link).map(i => i.link));
 
+    },
+
+    getSubTopics: function(clickedTopicId) {
+      return axios.get(`/api/subtopics/${clickedTopicId}`)
     }
 
 
