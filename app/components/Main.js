@@ -13,9 +13,19 @@ export default class Main extends React.Component{
     super();
     this.state = {
       topicId: "1",
-      subTopicId: "0",
-      subTopicData: {}
+      subtopicId: "1",
+      subtopicData: {}
     };
+  }
+
+  componentDidMount() {
+    helpers.getSubtopics(this.state.subtopicId)
+    .then(function(response) {
+      console.log(response.data);
+      this.setState({
+        subtopicData: response.data
+      });
+    }.bind(this));
   }
 
   // Topic click handler
@@ -23,12 +33,12 @@ export default class Main extends React.Component{
     event.preventDefault();
     let clickedTopicId = event.target.getAttribute('value');
 
-    helpers.getSubTopics(clickedTopicId)
+    helpers.getSubtopics(clickedTopicId)
     .then(function(response) {
       console.log(response.data);
       this.setState({
         topicId: clickedTopicId,
-        subTopicData: response.data
+        subtopicData: response.data
       });
     }.bind(this));
   }
@@ -64,9 +74,9 @@ export default class Main extends React.Component{
           <div className="page-content">
             <div className="mdl-grid">
 
-            <Overview subTopicId={this.state.subTopicId} subTopicData={this.state.subTopicData} />
-            <CodeSnippet subTopicId={this.state.subTopicId} subTopicData={this.state.subTopicData}/>
-            <Resources subTopicId={this.state.subTopicId} />
+            <Overview subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} />
+            <CodeSnippet subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData}/>
+            <Resources subtopicId={this.state.subtopicId} />
 
             </div>
           </div>

@@ -6,22 +6,22 @@ export default class Overview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      subtopicId: "",
       paragraph1: "",
       paragraph2: "",
       paragraph3: ""
     };
   }
 
-  componentDidMount() {
-
-  }
-
   componentDidUpdate() {
-    this.setState({
-      paragraph1: this.props.subTopicData[this.props.subTopicId].paragraph1,
-      paragraph2: this.props.subTopicData[this.props.subTopicId].paragraph2,
-      paragraph3: this.props.subTopicData[this.props.subTopicId].paragraph3
-    })
+    if (this.state.subtopicId !== this.props.subtopicId) {
+      this.setState({
+        subtopicId: this.props.subtopicId,
+        paragraph1: this.props.subtopicData[this.props.subtopicId].paragraph1,
+        paragraph2: this.props.subtopicData[this.props.subtopicId].paragraph2,
+        paragraph3: this.props.subtopicData[this.props.subtopicId].paragraph3
+      })
+    }
   }
 
   render() {
