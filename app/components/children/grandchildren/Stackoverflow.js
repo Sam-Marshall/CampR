@@ -10,6 +10,7 @@ export default class Stackoverflow extends React.Component{
     };
   }
   componentDidMount() {
+    {/*Once connected, set state to query props sent from parent here*/}
     helpers.stackoverflowQuery(this.state.query).then(function(data) {
       this.setState({links: data});
       console.log(this.state.links);

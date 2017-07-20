@@ -26,7 +26,7 @@ export default class Videos extends React.Component{
 
       {/*Bare Minimal Proof of Concept Video Display*/}
       {/*It would be nice to show an image and be able to horz scroll through them*/}
-      {/*We can get video thumbnails from the AJAX call to YouTube*/}
+      {/*We can get video thumbnails and titles from the AJAX call to YouTube*/}
         <ol>
           <li><a href={videoURL + this.state.videos[0]} target="_blank">{this.state.query + ' Video'}</a></li>
           <li><a href={videoURL + this.state.videos[1]} target="_blank">{this.state.query + ' Video'}</a></li>
