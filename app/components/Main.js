@@ -1,6 +1,5 @@
 // React Dependencies
 import React from 'react';
-import { withRouter } from 'react-router';
 import helpers from './utils/helpers';
 import { Link } from 'react-router-dom';
 
