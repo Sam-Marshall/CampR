@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Continue from './grandchildren/Continue';
+import MDN from './grandchildren/MDN';
 import Stackoverflow from './grandchildren/Stackoverflow';
 import Videos from './grandchildren/Videos';
-import MDN from './grandchildren/MDN';
+
+
 
 export default class Resources extends React.Component{
   constructor(props){
@@ -46,7 +49,7 @@ export default class Resources extends React.Component{
 
             <div className="mdl-grid moocs">
               <div className="mdl-cell mdl-cell--12-col">
-                <h4>Continue your learning</h4>
+                <Continue />
               </div>
             </div>
 
