@@ -16,6 +16,7 @@ export default class Main extends React.Component{
       subtopicId: "0",
       subtopicData: []
     };
+    this.setSubtopic = this.setSubtopic.bind(this);
   }
 
   componentDidMount() {
@@ -43,11 +44,17 @@ export default class Main extends React.Component{
     }.bind(this));
   }
 
+  setSubtopic(i) {
+    let clickedSubtopic = i;
+    this.setState({ subtopicId: clickedSubtopic });
+  }
+
   render() {
+    {/* Map through subtopics array and display names in sidebar */}
     let results = this.state.subtopicData;
-    let subtopicNames = results.map(function (data, index) {
+    let subtopicNames = results.map((data, index) => {
       return (
-        <a className="mdl-navigation__link" onClick={""} key={index}>{data.name}</a>
+        <div className="mdl-navigation__link" href={""} onClick={()=>this.setSubtopic(index)} key={index}>{data.name}</div>
       )
     });
 
@@ -71,10 +78,8 @@ export default class Main extends React.Component{
         <div className="mdl-layout__drawer">
           <span className="mdl-layout-title">CAMPR</span>
           <nav className="mdl-navigation">
+            {/* Including Subtopic names here*/}
             {subtopicNames}
-            {/* <a className="mdl-navigation__link" onClick={""} value="HTML">HTML</a>
-            <a className="mdl-navigation__link" onClick={""} value="CSS">CSS</a>
-            <a className="mdl-navigation__link" onClick={""} value="Javascript">Javascript</a> */}
           </nav>
         </div>
 
