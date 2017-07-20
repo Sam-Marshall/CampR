@@ -14,7 +14,7 @@ export default class Main extends React.Component{
     this.state = {
       topicId: "1",
       subtopicId: "0",
-      subtopicData: {}
+      subtopicData: []
     };
   }
 
@@ -44,6 +44,13 @@ export default class Main extends React.Component{
   }
 
   render() {
+    let results = this.state.subtopicData;
+    let subtopicNames = results.map(function (data, index) {
+      return (
+        <a className="mdl-navigation__link" onClick={""} key={index}>{data.name}</a>
+      )
+    });
+
     return (
       <div className="wrapper">
         <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -64,9 +71,10 @@ export default class Main extends React.Component{
         <div className="mdl-layout__drawer">
           <span className="mdl-layout-title">CAMPR</span>
           <nav className="mdl-navigation">
-            <a className="mdl-navigation__link" onClick={""} value="HTML">HTML</a>
+            {subtopicNames}
+            {/* <a className="mdl-navigation__link" onClick={""} value="HTML">HTML</a>
             <a className="mdl-navigation__link" onClick={""} value="CSS">CSS</a>
-            <a className="mdl-navigation__link" onClick={""} value="Javascript">Javascript</a>
+            <a className="mdl-navigation__link" onClick={""} value="Javascript">Javascript</a> */}
           </nav>
         </div>
 
