@@ -68,7 +68,7 @@ export default class Main extends React.Component{
 
               <div className="mdl-layout-spacer"></div>
 
-              <nav className="mdl-navigation mdl-layout--large-screen-only">
+              <nav className="mdl-navigation">
                 <a className="mdl-navigation__link" href={""} value="1" onClick={(e) => this.handleClick(e)}>HTML</a>
                 <a className="mdl-navigation__link" href={""} value="2" onClick={(e) => this.handleClick(e)}>CSS</a>
                 <a className="mdl-navigation__link" href={""} value="3" onClick={(e) => this.handleClick(e)}>Javascript</a>
