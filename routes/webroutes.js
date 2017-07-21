@@ -2,24 +2,25 @@ var camprdb = require('../models');
 
 module.exports = function(app) {
 
+    // Topics
     app.get('/api', function(req, res) {
-        camprdb.Topic.findAll({})
-            .then(function(response) {
-                res.json(response)
-            });
+      camprdb.Topic.findAll({})
+      .then(function(response) {
+        res.json(response)
+      });
     });
 
-    app.get("/topics", function(req, res) {
-
-        Topic.find({}, function(err, doc) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log(doc);
-            }
-
-        });
-
+    // Subtopics
+    app.get('/api/subtopics/:topicId', function(req, res) {
+      console.log(req.params.topicId);
+      camprdb.Subtopic.findAll({
+        where: {
+          topic_id: req.params.topicId
+        }
+      })
+      .then(function(response) {
+        res.send(response);
+      });
     });
 
     app.get("/:topic/subtopics", function(req, res) {
