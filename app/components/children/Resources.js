@@ -11,7 +11,8 @@ export default class Resources extends React.Component{
       this.state = {
           expanded: true,
           subtopicName: '',
-          topicName: ''
+          topicName: '',
+          subtopicId: ''
       };
   }
 
@@ -19,8 +20,10 @@ export default class Resources extends React.Component{
       if (nextProps.subtopicName !== this.state.subtopicName) {
           this.setState({
               subtopicName: nextProps.subtopicName,
-              topicName: nextProps.topicName
-          })
+              topicName: nextProps.topicName,
+              subtopicId: nextProps.subtopicId
+          });
+          console.log(this.state);
       }
   }
 
