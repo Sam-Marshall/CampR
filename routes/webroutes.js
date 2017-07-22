@@ -16,6 +16,9 @@ module.exports = function(app) {
         camprdb.Subtopic.findAll({
                 where: {
                     topic_id: req.params.topicId
+                },
+                include: {
+                    model: camprdb.Snippet
                 }
             })
             .then(function(response) {
@@ -23,6 +26,7 @@ module.exports = function(app) {
             });
     });
 
+    // Topics including subtopics, snippets, and comments
     app.get("/api/topic/:topicId", function(req, res) {
 
         camprdb.Topic.findAll({
@@ -30,7 +34,12 @@ module.exports = function(app) {
                     id: req.params.topicId
                 },
                 include: {
-                    model: camprdb.Subtopic
+                    model: camprdb.Subtopic,
+                    include: [{
+                        model: camprdb.Snippet
+                    }, {
+                        model: camprdb.Comment
+                    }]
                 }
             })
             .then(function(response) {
