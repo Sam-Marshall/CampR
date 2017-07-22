@@ -6,29 +6,22 @@ import ExternalSources from './grandchildren/ExternalSources';
 
 export default class Resources extends React.Component{
   
-  constructor(props){
-    super(props);
-    this.state = {
-      expanded: true,
-      subtopicName: this.props.subtopicName,
-      topicName: this.props.topicName
-    };
+  constructor(props) {
+      super(props);
+      this.state = {
+          expanded: true,
+          subtopicName: '',
+          topicName: ''
+      };
   }
 
-  componentDidMount() {
-    console.log(this.props);
-  }
-
-  componentDidUpdate() {
-    if (this.state.subtopicName !== this.props.subtopicName) {
-      this.setState({
-        subtopicName: this.props.subtopicName,
-        topicName: this.props.topicName
-      })
-    }
-    console.log(this.state.subtopicName);
-    console.log('Topic:' + this.state.topicName);
-    console.log(this.props);
+  componentWillReceiveProps(nextProps) {
+      if (nextProps.subtopicName !== this.state.subtopicName) {
+          this.setState({
+              subtopicName: nextProps.subtopicName,
+              topicName: nextProps.topicName
+          })
+      }
   }
 
   toggleContent(event){
@@ -44,7 +37,7 @@ export default class Resources extends React.Component{
           <div className="mdl-grid external-sources resource_col">
             <div className="mdl-cell mdl-cell--12-col">
               <h4 onClick={(e) => this.toggleContent(e)}>External Resources</h4>
-              <ExternalSources />
+              <ExternalSources subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
             </div>
           </div>
 
@@ -57,7 +50,7 @@ export default class Resources extends React.Component{
           <div className="mdl-grid moocs resource_col">
             <div className="mdl-cell mdl-cell--12-col">
               <h4>Continue Your Education</h4>
-              <Continue />
+              <Continue subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
             </div>
           </div>
 

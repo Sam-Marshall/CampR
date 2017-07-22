@@ -6,10 +6,24 @@ import Stackoverflow from './Stackoverflow';
 import Videos from './Videos';
 
 export default class ExternalSources extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {};
+
+  constructor(props) {
+      super(props);
+      this.state = {
+          subtopicName: '',
+          topicName: ''
+      };
   }
+
+  componentWillReceiveProps(nextProps) {
+      if (nextProps.subtopicName !== this.state.subtopicName) {
+          this.setState({
+              subtopicName: nextProps.subtopicName,
+              topicName: nextProps.topicName
+          })
+      }
+  }
+
   render() {
 
     return (
@@ -21,7 +35,7 @@ export default class ExternalSources extends React.Component{
         </div>
 
         <div className="mdl-tabs__panel is-active" id="Videos-panel">
-          <Videos />
+          <Videos subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
         </div>
 
         <div className="mdl-tabs__panel" id="Stackoverflow-panel">
