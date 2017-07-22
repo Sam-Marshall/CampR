@@ -9,7 +9,8 @@ export default class Overview extends React.Component {
       subtopicId: "",
       paragraph1: "",
       paragraph2: "",
-      paragraph3: ""
+      paragraph3: "",
+      image: ""
     };
   }
 
@@ -19,7 +20,8 @@ export default class Overview extends React.Component {
         subtopicId: this.props.subtopicId,
         paragraph1: this.props.subtopicData[this.props.subtopicId].paragraph1,
         paragraph2: this.props.subtopicData[this.props.subtopicId].paragraph2,
-        paragraph3: this.props.subtopicData[this.props.subtopicId].paragraph3
+        paragraph3: this.props.subtopicData[this.props.subtopicId].paragraph3,
+        image: this.props.subtopicData[this.props.subtopicId].image
       })
     }
   }
@@ -28,7 +30,7 @@ export default class Overview extends React.Component {
     return (
       <div className="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white overview">
         <h2>HTML & CSS</h2>
-        <img className="mdl-cell mdl-cell--12-col" src={"https://www.macitynet.it/wp-content/uploads/2015/02/vr-keyboard-1024x856.png"} />
+        <img className="mdl-cell mdl-cell--12-col" src={this.state.image} />
         <p>
           {this.state.paragraph1}
         </p>

@@ -46,6 +46,17 @@ display: none;
   border-right-color: #cecece;
 }
 
+.sidebar-topic {
+  text-align: center;
+  background-color: #3d3d3d;
+  color: white !important;
+  font-family: 'Averia Serif Libre', cursive;
+  font-weight: 900;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: white;
+}
+
 /*Code snippet*/
 .code-snippet {
   background-color: #ededed;
