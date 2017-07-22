@@ -24,7 +24,6 @@ export default class Stackoverflow extends React.Component{
   componentDidUpdate(prevProps, prevState) {
       if (prevState.subtopicName !== this.state.subtopicName && this.state.subtopicName !== "undefined") {
           helpers.stackoverflowQuery(this.state.topicName + ' ' + this.state.subtopicName).then(function(data) {
-              console.log(data);
               this.setState({ links: data });
               console.log(this.state.links);
           }.bind(this));
@@ -42,10 +41,6 @@ export default class Stackoverflow extends React.Component{
 
     return (
       <div className="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white resources">
-
-        {/*Bare Minimal Proof of Concept Links Display*/}
-        {/*Not sure of best way to make links display*/}
-        {/*We can pull the title of the Stackoverflow page to make each link a bit more specific*/}
 
         <ol>
           {linksArray}
