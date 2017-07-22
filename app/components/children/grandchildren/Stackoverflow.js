@@ -2,26 +2,41 @@ import React from 'react';
 import helpers from '../../utils/helpers';
 
 export default class Stackoverflow extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      links: [],
-      query: "Javascript Arrays"
-    };
+  
+  constructor(props) {
+      super(props);
+      this.state = {
+          links: [],
+          subtopicName: '',
+          topicName: ''
+      };
   }
-  componentDidMount() {
-    {/*Once connected, set state to query props sent from parent here*/}
-    helpers.stackoverflowQuery(this.state.query).then(function(data) {
-      this.setState({links: data});
-      console.log(this.state.links);
-    }.bind(this));
+
+  componentWillReceiveProps(nextProps) {
+      if (nextProps.subtopicName !== this.state.subtopicName) {
+          this.setState({
+              subtopicName: nextProps.subtopicName,
+              topicName: nextProps.topicName
+          })
+      }
   }
+
+  componentDidUpdate(prevProps, prevState) {
+      if (prevState.subtopicName !== this.state.subtopicName && this.state.subtopicName !== "undefined") {
+          helpers.stackoverflowQuery(this.state.topicName + ' ' + this.state.subtopicName).then(function(data) {
+              console.log(data);
+              this.setState({ links: data });
+              console.log(this.state.links);
+          }.bind(this));
+      }
+  }
+
   render() {
     let results = this.state.links;
     let linksArray = [];
 
     for (var i=0; i < 5; i++){
-        var listItem = <li key={i}><a href={results[i]} target="_blank">{this.state.query + ' Link'}</a></li>;
+        var listItem = <li key={i}><a href={results[i]} target="_blank">{this.state.topicName + ' ' + this.state.subtopicName + ' Link'}</a></li>;
         linksArray.push(listItem);
     }
 

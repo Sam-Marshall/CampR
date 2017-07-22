@@ -39,7 +39,7 @@ export default class ExternalSources extends React.Component{
         </div>
 
         <div className="mdl-tabs__panel" id="Stackoverflow-panel">
-          <Stackoverflow />
+          <Stackoverflow subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
         </div>
 
         <div className="mdl-tabs__panel" id="MDN-panel">
