@@ -85,15 +85,16 @@ export default class Main extends React.Component{
               <div className="mdl-layout-spacer"></div>
 
               <nav className="mdl-navigation">
-                <a className="mdl-navigation__link" href={""} value="1" onClick={(e) => this.handleClick(e)}>HTML</a>
-                <a className="mdl-navigation__link" href={""} value="2" onClick={(e) => this.handleClick(e)}>CSS</a>
-                <a className="mdl-navigation__link" href={""} value="3" onClick={(e) => this.handleClick(e)}>Javascript</a>
+               
               </nav>
             </div>
           </header>
         <div className="mdl-layout__drawer">
           <span className="mdl-layout-title">CAMPR</span>
           <nav className="mdl-navigation">
+            <a className="mdl-navigation__link sidebar-topic" href={""} value="1" onClick={(e) => this.handleClick(e)}>HTML</a>
+            <a className="mdl-navigation__link sidebar-topic" href={""} value="2" onClick={(e) => this.handleClick(e)}>CSS</a>
+            <a className="mdl-navigation__link sidebar-topic" href={""} value="3" onClick={(e) => this.handleClick(e)}>Javascript</a>
             {/* Including Subtopic names here*/}
             {subtopicNames}
           </nav>
