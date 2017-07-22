@@ -17,21 +17,23 @@ export default class Stackoverflow extends React.Component{
     }.bind(this));
   }
   render() {
+    let results = this.state.links;
+    let linksArray = [];
+
+    for (var i=0; i < 5; i++){
+        var listItem = <li key={i}><a href={results[i]} target="_blank">{this.state.query + ' Link'}</a></li>;
+        linksArray.push(listItem);
+    }
+
     return (
       <div className="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white resources">
-        
-        <h4>Stackoverflow Component</h4>
 
         {/*Bare Minimal Proof of Concept Links Display*/}
         {/*Not sure of best way to make links display*/}
         {/*We can pull the title of the Stackoverflow page to make each link a bit more specific*/}
 
         <ol>
-          <li><a href={this.state.links[0]} target="_blank">{this.state.query + ' Link'}</a></li>
-          <li><a href={this.state.links[1]} target="_blank">{this.state.query + ' Link'}</a></li>
-          <li><a href={this.state.links[2]} target="_blank">{this.state.query + ' Link'}</a></li>
-          <li><a href={this.state.links[3]} target="_blank">{this.state.query + ' Link'}</a></li>
-          <li><a href={this.state.links[4]} target="_blank">{this.state.query + ' Link'}</a></li>
+          {linksArray}
         </ol>
 
       </div>

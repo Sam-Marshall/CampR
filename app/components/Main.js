@@ -9,44 +9,59 @@ const CodeSnippet = require('./children/CodeSnippet');
 const Resources = require('./children/Resources');
 
 export default class Main extends React.Component{
-  constructor(){
-    super();
-    this.state = {
-      topicId: "1",
-      subtopicId: "0",
-      subtopicData: []
-    };
-    this.setSubtopic = this.setSubtopic.bind(this);
+  constructor() {
+      super();
+      this.state = {
+          topicId: "1",
+          subtopicId: "0",
+          subtopicData: [],
+          topicName: '',
+          subtopicName: ''
+      };
+      this.setSubtopic = this.setSubtopic.bind(this);
   }
 
   componentDidMount() {
-    helpers.getSubtopics(this.state.topicId)
-    .then(function(response) {
-      console.log(response.data);
-      this.setState({
-        subtopicData: response.data
-      });
-    }.bind(this));
+      helpers.getTopics(this.state.topicId)
+          .then(function(response) {
+              this.setState({
+                  subtopicData: response.data[0].Subtopics,
+                  topicName: response.data[0].name
+              });
+          }.bind(this));
+  }
+  
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.state);
   }
 
   // Topic click handler
   handleClick(event) {
-    event.preventDefault();
-    let clickedTopicId = event.target.getAttribute('value');
+      event.preventDefault();
+      let clickedTopicId = event.target.getAttribute('value');
 
-    helpers.getSubtopics(clickedTopicId)
-    .then(function(response) {
-      console.log(response.data);
-      this.setState({
-        topicId: clickedTopicId,
-        subtopicData: response.data
-      });
-    }.bind(this));
+      helpers.getTopics(clickedTopicId)
+          .then(function(response) {
+              console.log(response.data[0]);
+              this.setState({
+                  topicId: clickedTopicId,
+                  topicName: response.data[0].name,
+                  subtopicData: response.data[0].Subtopics,
+                  subtopicName: response.data[0].Subtopics[0].name,
+                  subtopicId: 0
+              });
+          }.bind(this));
   }
 
   setSubtopic(i) {
-    let clickedSubtopic = i;
-    this.setState({ subtopicId: clickedSubtopic });
+      let clickedSubtopic = i;
+      this.setState({ subtopicId: clickedSubtopic });
+      helpers.getTopics(this.state.topicId)
+          .then(function(response) {
+              this.setState({
+                  subtopicName: response.data[0].Subtopics[this.state.subtopicId].name
+              })
+          }.bind(this));
   }
 
   render() {
@@ -89,7 +104,7 @@ export default class Main extends React.Component{
 
             <Overview subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} />
             <CodeSnippet subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData}/>
-            <Resources subtopicId={this.state.subtopicId} />
+            <Resources subtopicName={this.state.subtopicName} topicName={this.state.topicName}/>
 
             </div>
           </div>

@@ -26,7 +26,11 @@ var helper = {
     },
 
     getSubtopics: function(clickedTopicId) {
-      return axios.get(`/api/subtopics/${clickedTopicId}`)
+        return axios.get(`/api/subtopics/${clickedTopicId}`)
+    },
+
+    getTopics: function(topicId) {
+        return axios.get(`/api/topic/${topicId}`)
     }
 
 
