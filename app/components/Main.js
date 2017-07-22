@@ -26,13 +26,14 @@ export default class Main extends React.Component{
           .then(function(response) {
               this.setState({
                   subtopicData: response.data[0].Subtopics,
-                  topicName: response.data[0].name
+                  topicName: response.data[0].name,
+                  subtopicName: response.data[0].Subtopics[0].name
               });
           }.bind(this));
   }
-  
+
   componentDidUpdate(prevProps, prevState) {
-    console.log(this.state);
+      console.log(this.state);
   }
 
   // Topic click handler

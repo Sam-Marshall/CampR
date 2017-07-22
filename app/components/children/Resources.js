@@ -15,14 +15,20 @@ export default class Resources extends React.Component{
     };
   }
 
+  componentDidMount() {
+    console.log(this.props);
+  }
+
   componentDidUpdate() {
-    if (this.state.subtopicId !== this.props.subtopicId) {
+    if (this.state.subtopicName !== this.props.subtopicName) {
       this.setState({
-        subtopicId: this.props.subtopicId
+        subtopicName: this.props.subtopicName,
+        topicName: this.props.topicName
       })
     }
     console.log(this.state.subtopicName);
     console.log('Topic:' + this.state.topicName);
+    console.log(this.props);
   }
 
   toggleContent(event){
