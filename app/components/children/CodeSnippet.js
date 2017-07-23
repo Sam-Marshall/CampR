@@ -7,7 +7,17 @@ export default class CodeSnippet extends React.Component{
     super(props);
     this.state = {
       snippetName: "",
-      snippetCode: ""
+      snippetCode: `
+      <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <title>My test page</title>
+          </head>
+          <body>
+            <p>This is my page</p>
+          </body>
+        </html>`
     }
   }
 
@@ -15,20 +25,6 @@ export default class CodeSnippet extends React.Component{
   }
 
   render() {
-    let snippet =
-    `
-  <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <title>My test page</title>
-      </head>
-      <body>
-        <p>This is my page</p>
-      </body>
-    </html>
-      `;
-
     return (
           <div className="mdl-cell mdl-cell--5-col mdl-cell--12-col-tablet mdl-cell--12-col-phone code-snippet">
             <div className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
@@ -41,7 +37,7 @@ export default class CodeSnippet extends React.Component{
               <div className="mdl-tabs__panel is-active" id="Exercise-1-panel">
                 <pre>
                   <code className="language-markup">
-                  {snippet}
+                  {this.state.snippetCode}
                   </code>
                 </pre>
               </div>
