@@ -69,7 +69,7 @@ h4 {
 /*Code snippet*/
 
 .code-snippet {
-    background-color: #ededed;
+    background-color: #f5f2f0;
 }
 
 .mdl-tabs__tab {
@@ -85,6 +85,12 @@ h4 {
 .mdl-tabs__tab-bar {
     background-color: white;
 }
+
+pre.language-markup {
+  margin: 0;
+}
+
+/*Resources*/
 
 .resources {
     /*  border-left-style: solid;

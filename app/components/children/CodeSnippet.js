@@ -2,8 +2,19 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-var CodeSnippet = React.createClass({
-  render: function() {
+export default class CodeSnippet extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      snippetName: "",
+      snippetCode: ""
+    }
+  }
+
+  componentDidUpdate() {
+  }
+  render() {
+
     return (
           <div className="mdl-cell mdl-cell--5-col mdl-cell--12-col-tablet mdl-cell--12-col-phone code-snippet">
             <div className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
@@ -14,15 +25,22 @@ var CodeSnippet = React.createClass({
               </div>
 
               <div className="mdl-tabs__panel is-active" id="Exercise-1-panel">
-                <ul>
-                  <li>Eddard</li>
-                  <li>Catelyn</li>
-                  <li>Robb</li>
-                  <li>Sansa</li>
-                  <li>Brandon</li>
-                  <li>Arya</li>
-                  <li>Rickon</li>
-                </ul>
+                <pre>
+                  <code className="language-markup">
+                  {`
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>My test page</title>
+    </head>
+    <body>
+      <p>This is my page</p>
+    </body>
+  </html>
+                    `}
+                  </code>
+                </pre>
               </div>
               <div className="mdl-tabs__panel" id="Exercise-2-panel">
                 <ul>
@@ -43,6 +61,6 @@ var CodeSnippet = React.createClass({
           </div>
     );
   }
-})
+}
 
 module.exports = CodeSnippet;
