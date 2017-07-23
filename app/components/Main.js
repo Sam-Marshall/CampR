@@ -110,7 +110,7 @@ export default class Main extends React.Component{
 
             <Overview subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} />
             <CodeSnippet subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData}/>
-            <Resources subtopicName={this.state.subtopicName} topicName={this.state.topicName} topicId={this.state.topicId} subtopicDbId={this.state.subtopicDbId} subtopicId={this.state.subtopicId}/>
+            <Resources subtopicName={this.state.subtopicName} topicName={this.state.topicName} topicId={this.state.topicId} subtopicDbId={this.state.subtopicDbId} />
 
             </div>
           </div>

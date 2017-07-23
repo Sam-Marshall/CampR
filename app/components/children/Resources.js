@@ -14,8 +14,7 @@ export default class Resources extends React.Component{
           subtopicName: '',
           topicName: '',
           subtopicDbId: '',
-          topicId: '',
-          subtopicId: ''
+          topicId: ''
       };
   }
 
@@ -25,8 +24,7 @@ export default class Resources extends React.Component{
               subtopicName: nextProps.subtopicName,
               topicName: nextProps.topicName,
               subtopicDbId: nextProps.subtopicDbId,
-              topicId: nextProps.topicId,
-              subtopicId: nextProps.subtopicId
+              topicId: nextProps.topicId
           });
       }
       console.log(nextProps);
@@ -52,7 +50,7 @@ export default class Resources extends React.Component{
           <div className="mdl-grid comments resource_col">
             <div className="mdl-cell mdl-cell--12-col comments-content">
               <h4>Comments</h4>
-              <Comments subtopicDbId={this.state.subtopicDbId} topicId={this.state.topicId} subtopicId={this.state.subtopicId}/>
+              <Comments subtopicDbId={this.state.subtopicDbId} topicId={this.state.topicId} />
             </div>
           </div>
 
