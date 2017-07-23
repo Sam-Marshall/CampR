@@ -13,7 +13,21 @@ export default class CodeSnippet extends React.Component{
 
   componentDidUpdate() {
   }
+
   render() {
+    let snippet =
+    `
+  <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>My test page</title>
+      </head>
+      <body>
+        <p>This is my page</p>
+      </body>
+    </html>
+      `;
 
     return (
           <div className="mdl-cell mdl-cell--5-col mdl-cell--12-col-tablet mdl-cell--12-col-phone code-snippet">
@@ -27,18 +41,7 @@ export default class CodeSnippet extends React.Component{
               <div className="mdl-tabs__panel is-active" id="Exercise-1-panel">
                 <pre>
                   <code className="language-markup">
-                  {`
-<!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="utf-8">
-      <title>My test page</title>
-    </head>
-    <body>
-      <p>This is my page</p>
-    </body>
-  </html>
-                    `}
+                  {snippet}
                   </code>
                 </pre>
               </div>
