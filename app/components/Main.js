@@ -83,14 +83,8 @@ export default class Main extends React.Component{
         <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
           <header className="mdl-layout__header">
             <div className="mdl-layout__header-row">
-
               <span className="mdl-layout-title">CAMPR</span>
-
               <div className="mdl-layout-spacer"></div>
-
-              <nav className="mdl-navigation">
-               
-              </nav>
             </div>
           </header>
         <div className="mdl-layout__drawer">
@@ -108,8 +102,8 @@ export default class Main extends React.Component{
           <div className="page-content">
             <div className="mdl-grid">
 
-            <Overview subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} />
-            <CodeSnippet subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData}/>
+            <Overview subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} topicName={this.state.topicName} />
+            <CodeSnippet subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} />
             <Resources subtopicName={this.state.subtopicName} topicName={this.state.topicName} topicId={this.state.topicId} subtopicDbId={this.state.subtopicDbId} />
 
             </div>
