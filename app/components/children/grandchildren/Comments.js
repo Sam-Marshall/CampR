@@ -60,7 +60,7 @@ export default class Comments extends React.Component{
     let commentArray = [];
 
     for (var i = 0; i < results.length; i++) {
-        var listItem = <li key={ i }>{results[i].comment}</li> ;
+        var listItem = <div><span>{results[i].comment}</span>{/*<span>{results[i].createdAt}</span>*/}</div> ;
         commentArray.push(listItem);
     }
 
@@ -79,9 +79,9 @@ export default class Comments extends React.Component{
             <button type="submit">Submit</button>
           </div>
         </form>
-        <ul>
+        <div className="scrollBox">
           {commentArray}
-        </ul>
+        </div>
       </div>
     );
   }

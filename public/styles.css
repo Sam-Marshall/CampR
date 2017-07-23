@@ -1,122 +1,139 @@
-html, body, h1,h3, h4 {
-  font-family: 'Raleway', sans-serif;
+html,
+body,
+h1,
+h3,
+h4 {
+    font-family: 'Raleway', sans-serif;
 }
 
 p {
-  font-size: 16px;
-  margin-top: 30px;
+    font-size: 16px;
+    margin-top: 30px;
 }
 
-h2, h3, h4 {
-  font-family: 'Averia Serif Libre', cursive;
-  font-style: italic;
-  margin: 0;
-  text-align: center;
+h2,
+h3,
+h4 {
+    font-family: 'Averia Serif Libre', cursive;
+    font-style: italic;
+    margin: 0;
+    text-align: center;
 }
 
 ::-webkit-scrollbar {
-display: none;
+    display: none;
 }
 
 .wrapper {
-  width: 100vw;
-  height: 100vh;
+    width: 100vw;
+    height: 100vh;
 }
 
 .mdl-layout__header {
-  background-color: white;
+    background-color: white;
 }
 
 .mdl-layout-title {
-  color: black;
-  font-family: 'Averia Serif Libre', cursive;
-  font-style: italic;
-  font-weight: 900;
+    color: black;
+    font-family: 'Averia Serif Libre', cursive;
+    font-style: italic;
+    font-weight: 900;
 }
 
-.overview, .code-snippet, .resources {
-  height: calc(100vh - 64px - 32px);
-  overflow-y: scroll;
+.overview,
+.code-snippet,
+.resources {
+    height: calc(100vh - 64px - 32px);
+    overflow-y: scroll;
 }
 
 .overview {
-  padding: 30px;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-right-color: #cecece;
+    padding: 30px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #cecece;
 }
 
 .sidebar-topic {
-  text-align: center;
-  background-color: #3d3d3d;
-  color: white !important;
-  font-family: 'Averia Serif Libre', cursive;
-  font-weight: 900;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: white;
+    text-align: center;
+    background-color: #3d3d3d;
+    color: white !important;
+    font-family: 'Averia Serif Libre', cursive;
+    font-weight: 900;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: white;
 }
 
-/*Code snippet*/
-.code-snippet {
-  background-color: #ededed;
 
+/*Code snippet*/
+
+.code-snippet {
+    background-color: #ededed;
 }
 
 .mdl-tabs__tab {
-  font-family: 'Averia Serif Libre', cursive;
-  text-transform: initial;
-  font-size: 16px;
+    font-family: 'Averia Serif Libre', cursive;
+    text-transform: initial;
+    font-size: 16px;
 }
 
 .mdl-tabs__tab.is-active:after {
-  background-color: red !important;
+    background-color: red !important;
 }
 
 .mdl-tabs__tab-bar {
-  background-color: white;
+    background-color: white;
 }
 
 .resources {
-/*  border-left-style: solid;
+    /*  border-left-style: solid;
   border-left-width: 1px;
   border-left-color: #cecece;*/
-  padding: 10px;
-  margin: 2px;
+    padding: 10px;
+    margin: 2px;
 }
 
-.external-sources{
-  height: 40%;
-  min-height: 250px;
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 50px;
+.external-sources {
+    height: 40%;
+    min-height: 250px;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 50px;
 }
 
 .comments {
-  height: 40%;
-  min-height: 250px;
-  margin: 0;
+    height: 40%;
+    min-height: 250px;
+    margin: 0;
 }
 
 .comments-content {
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #cecece;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #cecece;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #cecece;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #cecece;
 }
 
 .moocs {
-  height: 30%;
-  min-height: 80px;
-  margin: 0;
+    height: 30%;
+    min-height: 80px;
+    margin: 0;
 }
 
-.resource_col{
-  overflow: hidden;
-  border-style: solid;
-  border-width: 5px;
-  border-color: red;
+.resource_col {
+    overflow: hidden;
+    border-style: solid;
+    border-width: 5px;
+    border-color: red;
+}
+
+.scrollBox {
+    height: 120px;
+    width: 100%;
+    border: 1px solid #ccc;
+    overflow: auto;
+    padding: 10px
 }
