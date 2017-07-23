@@ -26,11 +26,19 @@ var helper = {
     },
 
     getSubtopics: function(clickedTopicId) {
-        return axios.get(`/api/subtopics/${clickedTopicId}`)
+        return axios.get(`/api/subtopics/${clickedTopicId}`);
     },
 
     getTopics: function(topicId) {
-        return axios.get(`/api/topic/${topicId}`)
+        return axios.get(`/api/topic/${topicId}`);
+    },
+
+    getComments: function(subtopicId){
+        return axios.get(`/api/comment/${subtopicId}`);
+    },
+
+    postComment: function(comment, subtopicId){
+        return axios.post(`/api/${comment}/${subtopicId}`);
     }
 
 

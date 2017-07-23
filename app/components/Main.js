@@ -16,7 +16,8 @@ export default class Main extends React.Component{
           subtopicId: "0",
           subtopicData: [],
           topicName: '',
-          subtopicName: ''
+          subtopicName: '',
+          subtopicDbId: ''
       };
       this.setSubtopic = this.setSubtopic.bind(this);
   }
@@ -27,7 +28,8 @@ export default class Main extends React.Component{
               this.setState({
                   subtopicData: response.data[0].Subtopics,
                   topicName: response.data[0].name,
-                  subtopicName: response.data[0].Subtopics[0].name
+                  subtopicName: response.data[0].Subtopics[0].name,
+                  subtopicDbId: response.data[0].Subtopics[0].id
               });
           }.bind(this));
   }
@@ -49,7 +51,8 @@ export default class Main extends React.Component{
                   topicName: response.data[0].name,
                   subtopicData: response.data[0].Subtopics,
                   subtopicName: response.data[0].Subtopics[0].name,
-                  subtopicId: 0
+                  subtopicId: 0,
+                  subtopicDbId: response.data[0].Subtopics[0].id
               });
           }.bind(this));
   }
@@ -60,7 +63,8 @@ export default class Main extends React.Component{
       helpers.getTopics(this.state.topicId)
           .then(function(response) {
               this.setState({
-                  subtopicName: response.data[0].Subtopics[this.state.subtopicId].name
+                  subtopicName: response.data[0].Subtopics[this.state.subtopicId].name,
+                  subtopicDbId: response.data[0].Subtopics[this.state.subtopicId].id
               })
           }.bind(this));
   }
@@ -106,7 +110,7 @@ export default class Main extends React.Component{
 
             <Overview subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} />
             <CodeSnippet subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData}/>
-            <Resources subtopicName={this.state.subtopicName} topicName={this.state.topicName} subtopicId={this.state.subtopicId}/>
+            <Resources subtopicName={this.state.subtopicName} topicName={this.state.topicName} topicId={this.state.topicId} subtopicDbId={this.state.subtopicDbId} subtopicId={this.state.subtopicId}/>
 
             </div>
           </div>

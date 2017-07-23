@@ -22,7 +22,7 @@ export default class Stackoverflow extends React.Component{
   }
 
   componentDidUpdate(prevProps, prevState) {
-      if (prevState.subtopicName !== this.state.subtopicName && this.state.subtopicName !== "undefined") {
+      if (prevState.subtopicName !== this.state.subtopicName && typeof this.state.subtopicName !== "undefined") {
           helpers.stackoverflowQuery(this.state.topicName + ' ' + this.state.subtopicName).then(function(data) {
               this.setState({ links: data });
               console.log(this.state.links);

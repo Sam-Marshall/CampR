@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Comments from './grandchildren/Comments';
 import Continue from './grandchildren/Continue';
 import ExternalSources from './grandchildren/ExternalSources';
 
@@ -12,6 +13,8 @@ export default class Resources extends React.Component{
           expanded: true,
           subtopicName: '',
           topicName: '',
+          subtopicDbId: '',
+          topicId: '',
           subtopicId: ''
       };
   }
@@ -21,10 +24,12 @@ export default class Resources extends React.Component{
           this.setState({
               subtopicName: nextProps.subtopicName,
               topicName: nextProps.topicName,
+              subtopicDbId: nextProps.subtopicDbId,
+              topicId: nextProps.topicId,
               subtopicId: nextProps.subtopicId
           });
-          console.log(this.state);
       }
+      console.log(nextProps);
   }
 
   toggleContent(event){
@@ -47,6 +52,7 @@ export default class Resources extends React.Component{
           <div className="mdl-grid comments resource_col">
             <div className="mdl-cell mdl-cell--12-col comments-content">
               <h4>Comments</h4>
+              <Comments subtopicDbId={this.state.subtopicDbId} topicId={this.state.topicId} subtopicId={this.state.subtopicId}/>
             </div>
           </div>
 
