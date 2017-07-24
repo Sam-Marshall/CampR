@@ -17,7 +17,7 @@ export default class Overview extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.state.subtopicId !== this.props.subtopicId) {
+    if (this.state.subtopicId !== this.props.subtopicId || this.state.topicName !== this.props.topicName) {
       this.setState({
         topicName: this.props.topicName,
         subtopicId: this.props.subtopicId,

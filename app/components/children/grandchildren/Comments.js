@@ -60,7 +60,7 @@ export default class Comments extends React.Component{
     let commentArray = [];
 
     for (var i = 0; i < results.length; i++) {
-        var listItem = <div><span>{results[i].comment}</span>{/*<span>{results[i].createdAt}</span>*/}</div> ;
+        var listItem = <div key={i}><span>{results[i].comment}</span>{/*<span>{results[i].createdAt}</span>*/}</div> ;
         commentArray.push(listItem);
     }
 
