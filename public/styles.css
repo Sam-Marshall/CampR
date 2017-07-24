@@ -143,3 +143,9 @@ pre.language-markup {
     overflow: auto;
     padding: 10px
 }
+
+.eduPic{
+    width: 30%;
+    margin: auto;
+    display: inline-block;
+}
