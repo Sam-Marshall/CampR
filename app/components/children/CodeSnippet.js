@@ -6,6 +6,7 @@ export default class CodeSnippet extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
+      subtopicId: "",
       snippetCode1: "",
       snippetCode2: "",
       snippetCode3: ""
@@ -13,21 +14,24 @@ export default class CodeSnippet extends React.Component{
   }
 
   componentDidUpdate() {
-    let codeLanguage = "";
-    if (this.props.topicName === "HTML") {
-      codeLanguage = "markup"
-    } else if (this.props.topicName === "CSS") {
-      codeLanguage = "css"
-    } else {
-      codeLanguage = "javascript"
-    };
+    if (this.props.subtopicId !== this.state.subtopicId) {
+      let codeLanguage = "";
+      if (this.props.topicName === "HTML") {
+        codeLanguage = "markup"
+      } else if (this.props.topicName === "CSS") {
+        codeLanguage = "css"
+      } else {
+        codeLanguage = "javascript"
+      };
 
-    this.setState({
-      snippetCode1: this.props.subtopicData[this.props.subtopicId].Snippets[0].code1,
-      snippetCode2: this.props.subtopicData[this.props.subtopicId].Snippets[0].code2,
-      snippetCode3: this.props.subtopicData[this.props.subtopicId].Snippets[0].code3,
-      snippetLanguage: codeLanguage
-    });
+      this.setState({
+        subtopicId: this.props.subtopicId,
+        snippetCode1: this.props.subtopicData[this.props.subtopicId].Snippets[0].code1,
+        snippetCode2: this.props.subtopicData[this.props.subtopicId].Snippets[0].code2,
+        snippetCode3: this.props.subtopicData[this.props.subtopicId].Snippets[0].code3,
+        snippetLanguage: codeLanguage
+      });
+    }
     Prism.highlightAll();
   }
 
