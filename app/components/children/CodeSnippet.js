@@ -13,13 +13,22 @@ export default class CodeSnippet extends React.Component{
   }
 
   componentDidUpdate() {
+    let codeLanguage = "";
+    if (this.props.topicName === "HTML") {
+      codeLanguage = "markup"
+    } else if (this.props.topicName === "CSS") {
+      codeLanguage = "css"
+    } else {
+      codeLanguage = "javascript"
+    };
+
     this.setState({
       snippetCode1: this.props.subtopicData[this.props.subtopicId].Snippets[0].code1,
       snippetCode2: this.props.subtopicData[this.props.subtopicId].Snippets[0].code2,
       snippetCode3: this.props.subtopicData[this.props.subtopicId].Snippets[0].code3,
+      snippetLanguage: codeLanguage
     });
     Prism.highlightAll();
-    console.log(this.props.subtopicData, this.props.subtopicId)
   }
 
   render() {
@@ -34,21 +43,21 @@ export default class CodeSnippet extends React.Component{
 
               <div className="mdl-tabs__panel is-active" id="Exercise-1-panel">
                 <pre>
-                  <code className="language-markup">
+                  <code className={`language-${this.state.snippetLanguage}`}>
                     {this.state.snippetCode1}
                   </code>
                 </pre>
               </div>
               <div className="mdl-tabs__panel" id="Exercise-2-panel">
                 <pre>
-                  <code className="language-markup">
+                  <code className={`language-${this.state.snippetLanguage}`}>
                     {this.state.snippetCode2}
                   </code>
                 </pre>
               </div>
               <div className="mdl-tabs__panel" id="Exercise-3-panel">
                 <pre>
-                  <code className="language-markup">
+                  <code className={`language-${this.state.snippetLanguage}`}>
                     {this.state.snippetCode3}
                   </code>
                 </pre>
