@@ -33,8 +33,8 @@ export default class Overview extends React.Component {
   render() {
     return (
       <div className="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white overview">
-        <h2>{this.state.topicName}</h2>
-        <img className="mdl-cell mdl-cell--12-col" src={this.state.image} />
+        <h2 className="topic-heading">{this.state.topicName}</h2>
+        <img className="mdl-cell mdl-cell--12-col overview-img" src={this.state.image} />
         <h4>{this.state.subtopicName}</h4>
         <p>
           {this.state.paragraph1}
