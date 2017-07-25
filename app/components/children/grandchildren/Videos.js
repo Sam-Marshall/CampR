@@ -43,6 +43,7 @@ export default class Videos extends React.Component{
     videoArray = [];
 
     for (var i = 0; i < 5; i++) {
+        // var listItem = <li key={ i }> <a href = { videoURL + results[i] } target = "_blank" > { this.state.topicName + ' ' + this.state.subtopicName + ' Video' } </a></li> ;
         var listItem = <div key={i}><ReactPlayer width='100%' url= {videoURL + this.state.videos[i]} controls/></div>
         videoArray.push(listItem);
     }
