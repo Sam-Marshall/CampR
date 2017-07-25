@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./node_modules/.bin/webpack -w & ./node_modules/.bin/nodemon server",
     "start": "node server",
-    "postinstall": "./node_modules/.bin/webpack"
+    "postinstall": "./node_modules/.bin/webpack -p"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +29,7 @@
     "react-youtube": "^7.4.0",
     "semantic-ui-react": "^0.71.0",
     "sequelize": "^4.4.2",
+    "webpack": "^1.15.0",
     "webpack-dev-server": "^2.5.1"
   },
   "devDependencies": {
