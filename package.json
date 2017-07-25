@@ -8,7 +8,7 @@
     "dev": "./node_modules/.bin/webpack -w & ./node_modules/.bin/nodemon server",
     "start": "node server",
     "build": "webpack",
-    "postinstall": "./node_modules/.bin/webpack -p"
+    "postinstall": "./node_modules/.bin/webpack"
   },
   "author": "",
   "license": "ISC",
