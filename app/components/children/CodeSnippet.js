@@ -6,17 +6,20 @@ export default class CodeSnippet extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      snippetName: "",
-      snippetCode: ""
+      snippetCode1: "",
+      snippetCode2: "",
+      snippetCode3: ""
     }
   }
 
   componentDidUpdate() {
     this.setState({
-      snippetName: this.props.subtopicData[this.props.subtopicId].Snippets[0].name,
-      snippetCode: this.props.subtopicData[this.props.subtopicId].Snippets[0].code
+      snippetCode1: this.props.subtopicData[this.props.subtopicId].Snippets[0].code1,
+      snippetCode2: this.props.subtopicData[this.props.subtopicId].Snippets[0].code2,
+      snippetCode3: this.props.subtopicData[this.props.subtopicId].Snippets[0].code3,
     });
     Prism.highlightAll();
+    console.log(this.props.subtopicData, this.props.subtopicId)
   }
 
   render() {
@@ -24,29 +27,29 @@ export default class CodeSnippet extends React.Component{
           <div className="mdl-cell mdl-cell--5-col mdl-cell--12-col-tablet mdl-cell--12-col-phone code-snippet">
             <div className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
               <div className="mdl-tabs__tab-bar">
-                <a href={"#Exercise-1-panel"} className="mdl-tabs__tab is-active">{this.state.snippetName}</a>
-                <a href={"#Exercise-2-panel"} className="mdl-tabs__tab">{this.state.snippetName}</a>
-                <a href={"#Exercise-3-panel"} className="mdl-tabs__tab">{this.state.snippetName}</a>
+                <a href={"#Exercise-1-panel"} className="mdl-tabs__tab is-active">Exercise 1</a>
+                <a href={"#Exercise-2-panel"} className="mdl-tabs__tab">Exercise 2</a>
+                <a href={"#Exercise-3-panel"} className="mdl-tabs__tab">Exercise 3</a>
               </div>
 
               <div className="mdl-tabs__panel is-active" id="Exercise-1-panel">
                 <pre>
                   <code className="language-markup">
-                    {this.state.snippetCode}
+                    {this.state.snippetCode1}
                   </code>
                 </pre>
               </div>
               <div className="mdl-tabs__panel" id="Exercise-2-panel">
                 <pre>
                   <code className="language-markup">
-                    {this.state.snippetCode}
+                    {this.state.snippetCode2}
                   </code>
                 </pre>
               </div>
               <div className="mdl-tabs__panel" id="Exercise-3-panel">
                 <pre>
                   <code className="language-markup">
-                    {this.state.snippetCode}
+                    {this.state.snippetCode3}
                   </code>
                 </pre>
               </div>
