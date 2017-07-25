@@ -35,7 +35,7 @@ export default class Main extends React.Component{
   }
 
   componentDidUpdate(prevProps, prevState) {
-      console.log(this.state);
+      console.log(this.state.subtopicData);
   }
 
   // Topic click handler
@@ -87,24 +87,24 @@ export default class Main extends React.Component{
               <div className="mdl-layout-spacer"></div>
             </div>
           </header>
-        <div className="mdl-layout__drawer">
-          <span className="mdl-layout-title">CAMPR</span>
-          <nav className="mdl-navigation">
-            <a className="mdl-navigation__link sidebar-topic" href={""} value="1" onClick={(e) => this.handleClick(e)}>HTML</a>
-            <a className="mdl-navigation__link sidebar-topic" href={""} value="2" onClick={(e) => this.handleClick(e)}>CSS</a>
-            <a className="mdl-navigation__link sidebar-topic" href={""} value="3" onClick={(e) => this.handleClick(e)}>Javascript</a>
-            {/* Including Subtopic names here*/}
-            {subtopicNames}
-          </nav>
-        </div>
+          <div className="mdl-layout__drawer">
+            <span className="mdl-layout-title">CAMPR</span>
+            <nav className="mdl-navigation">
+              <a className="mdl-navigation__link sidebar-topic" href={""} value="1" onClick={(e) => this.handleClick(e)}>HTML</a>
+              <a className="mdl-navigation__link sidebar-topic" href={""} value="2" onClick={(e) => this.handleClick(e)}>CSS</a>
+              <a className="mdl-navigation__link sidebar-topic" href={""} value="3" onClick={(e) => this.handleClick(e)}>Javascript</a>
+              {/* Including Subtopic names here*/}
+              {subtopicNames}
+            </nav>
+          </div>
 
-        <main className="mdl-layout__content">
-          <div className="page-content">
-            <div className="mdl-grid">
+          <main className="mdl-layout__content">
+            <div className="page-content">
+              <div className="mdl-grid">
 
-            <Overview subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} topicName={this.state.topicName} />
-            <CodeSnippet subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} />
-            <Resources subtopicName={this.state.subtopicName} topicName={this.state.topicName} topicId={this.state.topicId} subtopicDbId={this.state.subtopicDbId} />
+                <Overview subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} topicName={this.state.topicName} />
+                <CodeSnippet subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} topicName={this.state.topicName} />
+                <Resources subtopicName={this.state.subtopicName} topicName={this.state.topicName} topicId={this.state.topicId} subtopicDbId={this.state.subtopicDbId} />
 
             </div>
           </div>

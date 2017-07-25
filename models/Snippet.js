@@ -5,7 +5,15 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        code: {
+        code1: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        code2: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        code3: {
             type: DataTypes.TEXT,
             allowNull: false
         },
@@ -20,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
             defaultValue: sequelize.literal('NOW()')
         }
     });
-    
+
     Snippet.associate = function(models) {
         this.belongsTo(models.Subtopic, {
             foreignKey: {
