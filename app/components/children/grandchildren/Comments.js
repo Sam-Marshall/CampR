@@ -1,5 +1,6 @@
 import React from 'react';
 import helpers from '../../utils/helpers';
+import moment from 'moment';
 
 export default class Comments extends React.Component{
   
@@ -63,9 +64,15 @@ export default class Comments extends React.Component{
     let results = this.state.commentsData;
     let commentArray = [];
 
-    for (var i = 0; i < results.length; i++) {
-        var listItem = <div key={i}><span>{results[i].comment}</span>{/*<span>{results[i].createdAt}</span>*/}</div> ;
-        commentArray.push(listItem);
+    if(typeof results[0] !== 'undefined'){
+
+      for (var i = 0; i < results.length; i++) {
+        var date = moment(results[i].createdAt).format('LLL');
+        console.log(date);
+        var listItem = <div key={i}><span className="commentContent">{results[i].comment}</span><br/><span className="dateStamp">{date}</span></div> ;
+        commentArray.unshift(listItem);
+      }
+
     }
 
     return (
@@ -74,13 +81,14 @@ export default class Comments extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <input
+              className="input-box"
               value={this.state.comment}
               type="text"
               id="newComment"
               onChange={this.handleChange}
                required
             />
-            <button type="submit">Submit</button>
+            <button type="submit" className="submit-btn">Submit</button>
           </div>
         </form>
         <div className="scrollBox">

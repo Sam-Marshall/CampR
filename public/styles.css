@@ -58,24 +58,27 @@ h4 {
     border-bottom-color: white;
 }
 
+
 /*Overview*/
+
 .overview {
-  padding: 30px;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-right-color: #cecece;
+    padding: 30px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #cecece;
 }
 
 .topic-heading {
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: red;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: red;
 }
 
 .overview-img {
-  margin-top: 30px;
-  margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
+
 
 
 /*Code snippet*/
@@ -101,6 +104,7 @@ h4 {
 pre.language-markup {
     margin: 0;
 }
+
 
 
 /*Resources*/
@@ -151,7 +155,7 @@ pre.language-markup {
 
 .scrollBox {
     height: 120px;
-    width: 100%;
+    width: 95%;
     border: 1px solid #ccc;
     overflow: auto;
     padding: 10px
@@ -166,4 +170,22 @@ pre.language-markup {
 
 .educationSection {
     justify-content: center;
+}
+
+.input-box {
+    width: 70%;
+}
+
+.submit-btn {
+    width: 25%;
+}
+
+.dateStamp {
+    clear: left;
+    float: right;
+}
+
+.commentContent{
+    clear: right;
+    float: left;
 }
