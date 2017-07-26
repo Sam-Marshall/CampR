@@ -43,15 +43,19 @@ export default class Comments extends React.Component{
   handleSubmit(event) {
       event.preventDefault();
       console.log(this.state);
-      helpers.postComment(this.state.comment, this.state.subtopicDbId)
-          .then(function(response) {
+      let formattedComment = (this.state.comment).split('?').join('--');
+      formattedComment = formattedComment.split('/').join('**');
+
+      helpers.postComment(formattedComment, this.state.subtopicDbId)
+          .then(response => {
               console.log('Comment added!');
-              // helpers.getComments(this.state.subtopicDbId)
-              //     .then(function(response) {
-              //         console.log(response.data);
-              //         this.setState({ commentsData: response.data });
-              //     }.bind(this));
+              helpers.getComments(this.state.subtopicDbId)
+                  .then(function(response) {
+                      console.log(response.data);
+                      this.setState({ commentsData: response.data });
+                  }.bind(this));
           });
+      this.setState({ comment: '' });
   }
 
   render() {

@@ -48,6 +48,7 @@ module.exports = function(app) {
 
     });
 
+    //Get comments
     app.get("/api/comment/:subtopicID", function(req, res) {
 
         camprdb.Comment.findAll({
@@ -61,11 +62,15 @@ module.exports = function(app) {
 
     });
 
-
+    //New comments
     app.post("/api/:comment/:subtopicID", function(req, res) {
 
+        var comment = req.params.comment;
+        comment = comment.split('--').join('?');
+        comment = comment.split('**').join('/');
+
         camprdb.Comment.create({
-                comment: req.params.comment,
+                comment: comment,
                 subtopic_id: req.params.subtopicID
             })
             .then(function(response) {
@@ -75,8 +80,8 @@ module.exports = function(app) {
     });
 
     // Main "/" Route. This will redirect the user to our rendered React application
-    app.get("/", function(req, res) {
-        res.sendFile(__dirname + "/public/index.html");
-    });
+    // app.get("/", function(req, res) {
+    //     res.sendFile(__dirname + "/public/index.html");
+    // });
 
 }

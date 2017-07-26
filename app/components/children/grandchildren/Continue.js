@@ -43,7 +43,8 @@ export default class Continue extends React.Component{
     }
     
     return (
-      <div className="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white resources">
+      
+      <div className="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white resources educationSection">
         
         <a href={courseraLink + this.state.topicName + ' ' + this.state.subtopicName} target="_blank"><img className="eduPic" src={"https://upload.wikimedia.org/wikipedia/commons/e/e5/Coursera_logo.PNG"}/></a>
         <a href={edxLink + this.state.topicName + ' ' + this.state.subtopicName} target="_blank"><img className="eduPic" src={"https://www.edx.org/sites/default/files/theme/edx-logo-header.png"}/></a>
