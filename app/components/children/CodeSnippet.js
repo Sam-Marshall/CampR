@@ -6,6 +6,7 @@ export default class CodeSnippet extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
+      topicName: "",
       subtopicName: "",
       subtopicId: "",
       snippetCode1: "",
@@ -17,15 +18,16 @@ export default class CodeSnippet extends React.Component{
   componentDidUpdate() {
     if (this.props.subtopicName !== this.state.subtopicName) {
       let codeLanguage = "";
-      if (this.props.subtopicName === "HTML") {
+      if (this.props.topicName === "HTML") {
         codeLanguage = "markup"
-      } else if (this.props.subtopicName === "CSS") {
+      } else if (this.props.topicName === "CSS") {
         codeLanguage = "css"
       } else {
         codeLanguage = "javascript"
       };
 
       this.setState({
+        topicName: this.props.topicName,
         subtopicName: this.props.subtopicName,
         subtopicId: this.props.subtopicId,
         snippetCode1: this.props.subtopicData[this.props.subtopicId].Snippets[0].code1,
