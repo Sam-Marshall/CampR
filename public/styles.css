@@ -47,13 +47,6 @@ h4 {
     overflow-y: scroll;
 }
 
-.overview {
-    padding: 30px;
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-right-color: #cecece;
-}
-
 .sidebar-topic {
     text-align: center;
     background-color: #3d3d3d;
@@ -65,6 +58,24 @@ h4 {
     border-bottom-color: white;
 }
 
+/*Overview*/
+.overview {
+  padding: 30px;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #cecece;
+}
+
+.topic-heading {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: red;
+}
+
+.overview-img {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 
 /*Code snippet*/
