@@ -1,5 +1,6 @@
 import React from 'react';
 import helpers from '../../utils/helpers';
+import Slider from 'react-slick';
 
 export default class Stackoverflow extends React.Component{
   
@@ -39,12 +40,20 @@ export default class Stackoverflow extends React.Component{
         linksArray.push(listItem);
     }
 
+    let settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    }
+
     return (
       <div className="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white resources">
 
-        <ol>
+        <Slider {...settings}>
           {linksArray}
-        </ol>
+        </Slider>
 
       </div>
     );

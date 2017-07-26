@@ -68,8 +68,7 @@ export default class Comments extends React.Component{
 
       for (var i = 0; i < results.length; i++) {
         var date = moment(results[i].createdAt).format('LLL');
-        console.log(date);
-        var listItem = <div key={i}><span className="commentContent">{results[i].comment}</span><br/><span className="dateStamp">{date}</span></div> ;
+        var listItem = <div key={i}><span className="commentContent">{results[i].comment}</span><br/><span className="dateStamp">{date}</span><hr/></div> ;
         commentArray.unshift(listItem);
       }
 
@@ -91,6 +90,7 @@ export default class Comments extends React.Component{
             <button type="submit" className="submit-btn">Submit</button>
           </div>
         </form>
+        <br />
         <div className="scrollBox">
           {commentArray}
         </div>

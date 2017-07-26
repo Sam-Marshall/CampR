@@ -126,7 +126,7 @@ pre.language-markup {
 }
 
 .comments {
-    height: 40%;
+    height: 45%;
     min-height: 250px;
     margin: 0;
 }
@@ -154,7 +154,7 @@ pre.language-markup {
 }
 
 .scrollBox {
-    height: 120px;
+    height: 150px;
     width: 95%;
     border: 1px solid #ccc;
     overflow: auto;
@@ -188,4 +188,8 @@ pre.language-markup {
 .commentContent{
     clear: right;
     float: left;
+}
+
+hr{
+    clear: both;
 }
