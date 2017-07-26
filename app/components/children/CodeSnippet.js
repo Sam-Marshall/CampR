@@ -48,11 +48,9 @@ export default class CodeSnippet extends React.Component{
               </div>
 
               <div className="mdl-tabs__panel is-active" id="Exercise-1-panel">
-                <pre>
-                  <code className={`language-${this.state.snippetLanguage}`}>
+                <pre><code className={`language-${this.state.snippetLanguage}`}>
                     {this.state.snippetCode1}
-                  </code>
-                </pre>
+                </code></pre>
               </div>
               <div className="mdl-tabs__panel" id="Exercise-2-panel">
                 <pre>
