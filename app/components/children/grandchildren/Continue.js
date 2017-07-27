@@ -66,6 +66,7 @@ export default class Continue extends React.Component{
       
           <div className="mdl-tabs__panel is-active" id="Courses-panel">
             <br />
+            <br />
             <a href={courseraLink + this.state.topicName + '%20' + this.state.subtopicName} target="_blank"><img className="eduPic" src={"https://upload.wikimedia.org/wikipedia/commons/e/e5/Coursera_logo.PNG"}/></a>
             <a href={edxLink + this.state.topicName + '%20' + this.state.subtopicName} target="_blank"><img className="eduPic" src={"https://www.edx.org/sites/default/files/theme/edx-logo-header.png"}/></a>
             <a href={codeAcademyLink} target="_blank"><img className="eduPic" src={"https://p14.zdassets.com/hc/settings_assets/1030455/200272088/1muBAt6udX37m4Ihlik09w-CC_Logotype_Lockup_Blue_Alpha.png"}/></a>
@@ -76,19 +77,12 @@ export default class Continue extends React.Component{
 
           <div className="mdl-tabs__panel" id="Helpful-panel">
             <br />
-            
-            <div className="mdl-cell mdl-cell--6-col">
-              <ul>
-                <li><a href={"https://caniuse.com/"}>CanIUse</a></li>
-              </ul>
-            </div>
-
-            <div className="mdl-cell mdl-cell--6-col">
-              <ul>
-                <li><a href={"https://caniuse.com/"}>CanIUse</a></li>
-              </ul>
-            </div>
-
+            <a href={"https://caniuse.com/"} target="_blank"><img className="eduPic" src={"https://super-monitoring.com/blog/wp-content/uploads/2016/09/caniuse.png"}/></a>
+            <a href={"https://regex101.com/"} target="_blank"><img className="eduPic" src={"http://www.seocial.com/material/media/resource-regex101.jpg"}/></a>
+            <a href={"https://www.youtube.com/playlist?list=PLgJ8UgkiorCnbVc-ZiCqgm3dw7Cvrewq2"} target="_blank"><img className="eduPic" src={"https://yt3.ggpht.com/-wSWcfHo7wZE/AAAAAAAAAAI/AAAAAAAAAAA/xH_Ohb-8Kyc/s100-c-k-no-mo-rj-c0xffffff/photo.jpg"}/></a>
+            <a href={"https://www.codeschool.com/courses/try-git"} target="_blank"><img className="eduPic" src={"https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/621/level-1-on-try-git-b54d1cd9fa940e4a3c1925056d38eca2.png"}/></a>
+            <a href={"https://hackdesign.org/lessons"} target="_blank"><img className="eduPic" src={"https://d1qb2nb5cznatu.cloudfront.net/startups/i/198816-df3f53b6c2449f54f1e7b654ab4d6c00-medium_jpg.jpg?buster=1366685215"}/></a>
+            <a href={"https://www.getpostman.com/"} target="_blank"><img className="eduPic" src={"https://www.getpostman.com/img/v2/logo-glyph.png"}/></a>
           </div>
 
       </div>
