@@ -5,18 +5,18 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        paragraph1: {
-            type: DataTypes.TEXT,
-            allowNull: false
-        },
-        paragraph2: {
-            type: DataTypes.TEXT,
-            allowNull: false
-        },
-        paragraph3: {
-            type: DataTypes.TEXT,
-            allowNull: false
-        },
+        // paragraph1: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: false
+        // },
+        // paragraph2: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: false
+        // },
+        // paragraph3: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: false
+        // },
         image: {
             type: DataTypes.STRING,
             allowNull: false

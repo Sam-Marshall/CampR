@@ -24,7 +24,7 @@ app.use(express.static("./public"));
 
 require("./routes/webroutes.js")(app);
 
-camprdb.sequelize.sync().then(function() {
+camprdb.sequelize.sync({force: true}).then(function() {
     app.listen(PORT, function() {
         console.log("App listening on PORT: " + PORT);
     });
