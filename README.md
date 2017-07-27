@@ -1,6 +1,6 @@
 # CAMPR
 
-![CAMPR Welcome Screen](./public/images/readme-screen1.JPG?raw=true "CAMPR Welcome Screen")
+![CAMPR Welcome Screen](./public/images/readme-screen3.JPG?raw=true "CAMPR Welcome Screen")
 
 Camper is an educational service for coding students to review, share, and extend their learning.
 
