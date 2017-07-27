@@ -9,26 +9,29 @@ export default class Stackoverflow extends React.Component{
       this.state = {
           links: [],
           subtopicName: '',
-          topicName: ''
+          topicName: '',
+          subtopicDbId: ''
       };
   }
 
   componentWillReceiveProps(nextProps) {
-      if (nextProps.subtopicName !== this.state.subtopicName) {
+      if (nextProps.subtopicDbId !== this.state.subtopicDbId) {
           this.setState({
               subtopicName: nextProps.subtopicName,
-              topicName: nextProps.topicName
+              topicName: nextProps.topicName,
+              subtopicDbId: nextProps.subtopicDbId
           })
       }
   }
 
   componentDidUpdate(prevProps, prevState) {
-      if (prevState.subtopicName !== this.state.subtopicName && typeof this.state.subtopicName !== "undefined") {
+      if (prevState.subtopicDbId !== this.state.subtopicDbId && typeof this.state.subtopicName !== "undefined") {
           helpers.stackoverflowQuery(this.state.topicName + ' ' + this.state.subtopicName).then(function(data) {
               this.setState({ links: data });
               console.log(this.state.links);
           }.bind(this));
       }
+
   }
 
   render() {

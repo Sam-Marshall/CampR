@@ -8,21 +8,23 @@ export default class MDN extends React.Component{
       this.state = {
           link: '',
           subtopicName: '',
-          topicName: ''
+          topicName: '',
+          subtopicDbId: ''
       };
   }
 
   componentWillReceiveProps(nextProps) {
-      if (nextProps.subtopicName !== this.state.subtopicName) {
+      if (nextProps.subtopicDbId !== this.state.subtopicDbId) {
           this.setState({
               subtopicName: nextProps.subtopicName,
-              topicName: nextProps.topicName
+              topicName: nextProps.topicName,
+              subtopicDbId: nextProps.subtopicDbId
           })
       }
   }
 
   componentDidUpdate(prevProps, prevState) {
-      if (prevState.subtopicName !== this.state.subtopicName && typeof this.state.subtopicName !== "undefined") {
+      if (prevState.subtopicDbId !== this.state.subtopicDbId && typeof this.state.subtopicName !== "undefined") {
         this.setState({
           link: MDNlink + this.state.subtopicName + '+' + this.state.topicName
         });

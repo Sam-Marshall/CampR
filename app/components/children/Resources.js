@@ -41,7 +41,7 @@ export default class Resources extends React.Component{
           <div className="mdl-grid external-sources resource_col">
             <div className="mdl-cell mdl-cell--12-col">
               <h4 onClick={(e) => this.toggleContent(e)}>External Resources</h4>
-              <ExternalSources subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
+              <ExternalSources subtopicName={this.state.subtopicName} topicName={this.state.topicName} subtopicDbId={this.state.subtopicDbId}/>
             </div>
           </div>
 
@@ -55,7 +55,7 @@ export default class Resources extends React.Component{
           <div className="mdl-grid moocs resource_col">
             <div className="mdl-cell mdl-cell--12-col">
               <h4>Continue Your Education</h4>
-              <Continue subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
+              <Continue subtopicName={this.state.subtopicName} topicName={this.state.topicName} subtopicDbId={this.state.subtopicDbId}/>
             </div>
           </div>
 

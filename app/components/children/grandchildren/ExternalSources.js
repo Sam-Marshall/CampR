@@ -11,14 +11,16 @@ export default class ExternalSources extends React.Component{
       super(props);
       this.state = {
           subtopicName: '',
-          topicName: ''
+          topicName: '',
+          subtopicDbId: ''
       };
   }
 
   componentWillReceiveProps(nextProps) {
-      if (nextProps.subtopicName !== this.state.subtopicName) {
+      if (nextProps.subtopicDbId !== this.state.subtopicDbId) {
           this.setState({
               subtopicName: nextProps.subtopicName,
+              subtopicDbId: nextProps.subtopicDbId,
               topicName: nextProps.topicName
           })
       }
@@ -35,15 +37,15 @@ export default class ExternalSources extends React.Component{
           </div>
 
           <div className="mdl-tabs__panel is-active" id="Videos-panel">
-            <Videos subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
+            <Videos subtopicName={this.state.subtopicName} topicName={this.state.topicName} subtopicDbId={this.state.subtopicDbId}/>
           </div>
 
           <div className="mdl-tabs__panel" id="Stackoverflow-panel">
-            <Stackoverflow subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
+            <Stackoverflow subtopicName={this.state.subtopicName} topicName={this.state.topicName} subtopicDbId={this.state.subtopicDbId}/>
           </div>
 
           <div className="mdl-tabs__panel" id="MDN-panel">
-            <MDN subtopicName={this.state.subtopicName} topicName={this.state.topicName}/>
+            <MDN subtopicName={this.state.subtopicName} topicName={this.state.topicName} subtopicDbId={this.state.subtopicDbId}/>
           </div>
         </div>
     );

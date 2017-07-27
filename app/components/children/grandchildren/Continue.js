@@ -14,15 +14,17 @@ export default class Continue extends React.Component{
     this.state = {
       links: [],
       subtopicName: '',
-      topicName: ''
+      topicName: '',
+      subtopicDbId: ''
     };
   }
 
   componentWillReceiveProps(nextProps) {
-      if (nextProps.subtopicName !== this.state.subtopicName) {
+      if (nextProps.subtopicDbId !== this.state.subtopicDbId) {
           this.setState({
               subtopicName: nextProps.subtopicName,
-              topicName: nextProps.topicName
+              topicName: nextProps.topicName,
+              subtopicDbId: nextProps.subtopicDbId
           })
       }
       console.log(nextProps);
@@ -74,7 +76,18 @@ export default class Continue extends React.Component{
 
           <div className="mdl-tabs__panel" id="Helpful-panel">
             <br />
-            <a href={"https://caniuse.com/"}>CanIUse</a>
+            
+            <div className="mdl-cell mdl-cell--6-col">
+              <ul>
+                <li><a href={"https://caniuse.com/"}>CanIUse</a></li>
+              </ul>
+            </div>
+
+            <div className="mdl-cell mdl-cell--6-col">
+              <ul>
+                <li><a href={"https://caniuse.com/"}>CanIUse</a></li>
+              </ul>
+            </div>
 
           </div>
 
