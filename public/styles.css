@@ -67,7 +67,9 @@ hr {
     border-bottom-color: white;
 }
 
-
+.sidebar-topic:hover {
+    color: black !important;
+}
 
 /*Overview*/
 
