@@ -4,6 +4,7 @@ import helpers from './utils/helpers';
 import { Link } from 'react-router-dom';
 
 // require components
+const Landing = require('./children/Landing');
 const Overview = require('./children/Overview');
 const CodeSnippet = require('./children/CodeSnippet');
 const Resources = require('./children/Resources');
@@ -79,6 +80,7 @@ export default class Main extends React.Component{
 
     return (
       <div className="wrapper">
+        <Landing />
         <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
           <header className="mdl-layout__header">
             <div className="mdl-layout__header-row">
@@ -100,7 +102,6 @@ export default class Main extends React.Component{
           <main className="mdl-layout__content">
             <div className="page-content">
               <div className="mdl-grid">
-
                 <Overview subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} topicName={this.state.topicName} />
                 <CodeSnippet subtopicId={this.state.subtopicId} subtopicDbId={this.state.subtopicDbId} subtopicData={this.state.subtopicData} subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
                 <Resources subtopicName={this.state.subtopicName} topicName={this.state.topicName} topicId={this.state.topicId} subtopicDbId={this.state.subtopicDbId} />

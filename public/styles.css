@@ -71,6 +71,17 @@ hr {
     color: black !important;
 }
 
+/*Landing*/
+.landing-bg {
+  background-color: cyan;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+}
+
 /*Overview*/
 
 .overview {
