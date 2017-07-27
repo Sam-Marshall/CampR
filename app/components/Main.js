@@ -35,7 +35,6 @@ export default class Main extends React.Component{
   }
 
   componentDidUpdate(prevProps, prevState) {
-      console.log(this.state.subtopicData);
   }
 
   // Topic click handler
@@ -103,7 +102,7 @@ export default class Main extends React.Component{
               <div className="mdl-grid">
 
                 <Overview subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} topicName={this.state.topicName} />
-                <CodeSnippet subtopicId={this.state.subtopicId} subtopicData={this.state.subtopicData} subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
+                <CodeSnippet subtopicId={this.state.subtopicId} subtopicDbId={this.state.subtopicDbId} subtopicData={this.state.subtopicData} subtopicName={this.state.subtopicName} topicName={this.state.topicName} />
                 <Resources subtopicName={this.state.subtopicName} topicName={this.state.topicName} topicId={this.state.topicId} subtopicDbId={this.state.subtopicDbId} />
 
             </div>
