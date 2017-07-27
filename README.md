@@ -12,7 +12,7 @@ Coders read important review content while watching related videos and adding he
 
 ## Getting Started
 
-Visit +++URL+++ to view CAMPR online. To use a local instance, simply clone the repo, install all required npm packages, and run using a node server.
+Visit [https://campr-guide.herokuapp.com/](https://campr-guide.herokuapp.com/) to view CAMPR online. To use a local instance, simply clone the repo, install all required npm packages, and run using a node server.
 
 ### Prerequisites
 
@@ -24,7 +24,7 @@ npm install
 
 ## Deployment
 
-Deployment can be achieved using Heroku, as is the case with the CAMPR site currently online at ++URL++
+Deployment can be achieved using Heroku, as is the case with the CAMPR site currently online at [https://campr-guide.herokuapp.com/](https://campr-guide.herokuapp.com/)
 
 ## Built With
 
