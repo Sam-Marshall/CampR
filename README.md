@@ -1,6 +1,6 @@
 # CAMPR
 
-![CAMPR Welcome Screen](Sam-Marshall/CampR/blob/master/public/images/readme-screen1.JPG?raw=true "CAMPR Welcome Screen")
+![CAMPR Welcome Screen](./public/images/readme-screen1.JPG?raw=true "CAMPR Welcome Screen")
 
 Camper is an educational service for coding bootcamp students to review, share, and extend their learning.
 
@@ -8,7 +8,7 @@ Students select a web development topic they want to learn more about. From ther
 
 Coders read important review content while watching related videos and adding helpful comments. They can extend their learning by visiting the top questions asked from Stackoverflow and even refer to MDN resources and learn from MOOCs.
 
-![CAMPR App Screen](Sam-Marshall/CampR/blob/master/public/images/readme-screen2.JPG?raw=true "CAMPR App Screen")
+![CAMPR App Screen](./public/images/readme-screen2.JPG?raw=true "CAMPR App Screen")
 
 ## Getting Started
 
