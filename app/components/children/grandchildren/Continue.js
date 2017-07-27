@@ -59,7 +59,7 @@ export default class Continue extends React.Component{
           
           <div className="mdl-tabs__tab-bar">
             <a href={"#Courses-panel"} onClick={""} className="mdl-tabs__tab is-active">Courses</a>
-            <a href={"#Stackoverflow-panel"} className="mdl-tabs__tab">Stackoverflow</a>
+            <a href={"#Helpful-panel"} className="mdl-tabs__tab">Helpful Resources</a>
           </div>
       
           <div className="mdl-tabs__panel is-active" id="Courses-panel">
@@ -70,6 +70,12 @@ export default class Continue extends React.Component{
             <a href={udemyLink + this.state.topicName + '%20' + this.state.subtopicName} target="_blank"><img className="eduPic" src={"https://blog.udemy.com/wp-content/uploads/2010/12/udemy-logo-1.jpg"}/></a>
             <a href={treehouseLink} target="_blank"><img className="eduPic" src={"https://qph.ec.quoracdn.net/main-qimg-31ed8b0c424c8708f0684e669a01f7d5"}/></a>
             <a href={codeAvengersLink} target="_blank"><img className="eduPic" src={"https://www.codeavengers.com/image/code-avengers_ca-icon.png"}/></a>
+          </div>
+
+          <div className="mdl-tabs__panel" id="Helpful-panel">
+            <br />
+            <a href={"https://caniuse.com/"}>CanIUse</a>
+
           </div>
 
       </div>

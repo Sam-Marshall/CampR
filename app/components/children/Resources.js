@@ -19,7 +19,7 @@ export default class Resources extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-      if (nextProps.subtopicName !== this.state.subtopicName) {
+      if (nextProps.subtopicDbId !== this.state.subtopicDbId) {
           this.setState({
               subtopicName: nextProps.subtopicName,
               topicName: nextProps.topicName,
@@ -27,13 +27,11 @@ export default class Resources extends React.Component{
               topicId: nextProps.topicId
           });
       }
-      console.log(nextProps);
   }
 
   toggleContent(event){
     event.preventDefault();
     this.setState({expanded: !(this.state.expanded)});
-    console.log(this.state.expanded);
   }
 
   render() {
