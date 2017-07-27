@@ -2,7 +2,7 @@
 
 ![CAMPR Welcome Screen](./public/images/readme-screen1.JPG?raw=true "CAMPR Welcome Screen")
 
-Camper is an educational service for coding bootcamp students to review, share, and extend their learning.
+Camper is an educational service for coding students to review, share, and extend their learning.
 
 Students select a web development topic they want to learn more about. From there, a series of subtopics is retrieved and content is dynamically populated into the site.
 
