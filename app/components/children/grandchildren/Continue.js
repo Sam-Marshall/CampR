@@ -43,7 +43,7 @@ export default class Continue extends React.Component{
         treehouseLink = 'https://teamtreehouse.com/library/topic:css';
         codeAvengersLink = 'https://www.codeavengers.com/profile#html-css';
         break;
-      case 'Javascript':
+      case 'JavaScript':
         codeAcademyLink = 'https://www.codecademy.com/learn/javascript';
         treehouseLink = 'https://teamtreehouse.com/library/topic:javascript';
         codeAvengersLink = 'https://www.codeavengers.com/profile#javascript';

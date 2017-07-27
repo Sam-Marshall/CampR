@@ -17,7 +17,10 @@ var helper = {
 
     stackoverflowQuery: function(searchTerm) {
 
-        var queryURL = "https://api.stackexchange.com/2.2/search/advanced?sort=votes&q=" + searchTerm + "&accepted=True&title=" + searchTerm + "&site=stackoverflow";
+        var term = searchTerm.replace("Introduction", "");
+        console.log(term);
+
+        var queryURL = "https://api.stackexchange.com/2.2/search/advanced?sort=votes&q=" + term + "&accepted=True&title=" + term + "&site=stackoverflow";
 
         return axios
             .get(queryURL)
