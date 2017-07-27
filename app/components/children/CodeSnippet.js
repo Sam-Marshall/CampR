@@ -6,9 +6,9 @@ export default class CodeSnippet extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      topicName: "",
       subtopicName: "",
       subtopicId: "",
+      subtopicDbId: "",
       snippetCode1: "",
       snippetCode2: "",
       snippetCode3: ""
@@ -16,7 +16,7 @@ export default class CodeSnippet extends React.Component{
   }
 
   componentDidUpdate() {
-    if (this.props.subtopicName !== this.state.subtopicName) {
+    if (this.props.subtopicDbId !== this.state.subtopicDbId) {
       let codeLanguage = "";
       if (this.props.topicName === "HTML") {
         codeLanguage = "markup"
@@ -27,9 +27,9 @@ export default class CodeSnippet extends React.Component{
       };
 
       this.setState({
-        topicName: this.props.topicName,
         subtopicName: this.props.subtopicName,
         subtopicId: this.props.subtopicId,
+        subtopicDbId: this.props.subtopicDbId,
         snippetCode1: this.props.subtopicData[this.props.subtopicId].Snippets[0].code1,
         snippetCode2: this.props.subtopicData[this.props.subtopicId].Snippets[0].code2,
         snippetCode3: this.props.subtopicData[this.props.subtopicId].Snippets[0].code3,
