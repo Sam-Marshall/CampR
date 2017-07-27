@@ -42,9 +42,13 @@ export default class Videos extends React.Component{
     results = this.state.videos;
     videoArray = [];
 
-    for (var i = 0; i < 10; i++) {
-        var listItem = <div key={i}><ReactPlayer width='100%' height='150px' url= {videoURL + this.state.videos[i]} controls/></div>
-        videoArray.push(listItem);
+    if (typeof results[0] !== "undefined"){
+
+      for (var i = 0; i < 10; i++) {
+          var listItem = <div key={i}><ReactPlayer width='100%' height='150px' url= {videoURL + this.state.videos[i]} controls/><br/></div>
+          videoArray.push(listItem);
+      }
+
     }
 
     let settings = {
@@ -56,13 +60,9 @@ export default class Videos extends React.Component{
     }
 
     return (
-      <div className="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white resources">
+      <div className="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white">
 
-        <Slider {...settings}>
-          {videoArray}
-        </Slider>
-        {/*
-        */}
+        {videoArray.length > 0 ? <Slider {...settings}>{videoArray}</Slider>: null}
 
       </div>
     );

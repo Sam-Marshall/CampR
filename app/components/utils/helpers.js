@@ -17,11 +17,20 @@ var helper = {
 
     stackoverflowQuery: function(searchTerm) {
 
-        var queryURL = "https://api.stackexchange.com/2.2/search/advanced?fromdate=1420070400&order=desc&max=10&sort=votes&q=" + searchTerm + "&accepted=True&title=" + searchTerm + "&site=stackoverflow";
+        var queryURL = "https://api.stackexchange.com/2.2/search/advanced?sort=votes&q=" + searchTerm + "&accepted=True&title=" + searchTerm + "&site=stackoverflow";
 
         return axios
             .get(queryURL)
-            .then(response => response.data.items.filter(i => i.link).map(i => i.link));
+            .then(function(response) {
+                var linkArray = [];
+                for (var i = 0; i < response.data.items.length; i++) {
+                    var overflowObject = {};
+                    overflowObject.link = response.data.items[i].link;
+                    overflowObject.title = response.data.items[i].title;
+                    linkArray.push(overflowObject);
+                }
+                return linkArray;
+            });
 
     },
 
@@ -33,11 +42,11 @@ var helper = {
         return axios.get(`/api/topic/${topicId}`);
     },
 
-    getComments: function(subtopicId){
+    getComments: function(subtopicId) {
         return axios.get(`/api/comment/${subtopicId}`);
     },
 
-    postComment: function(comment, subtopicId){
+    postComment: function(comment, subtopicId) {
         return axios.post(`/api/${comment}/${subtopicId}`);
     }
 

@@ -75,8 +75,7 @@ export default class Comments extends React.Component{
     }
 
     return (
-      <div className="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white resources">
-
+      <div>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <input

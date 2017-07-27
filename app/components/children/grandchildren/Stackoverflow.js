@@ -35,9 +35,11 @@ export default class Stackoverflow extends React.Component{
     let results = this.state.links;
     let linksArray = [];
 
-    for (var i=0; i < 5; i++){
-        var listItem = <li key={i}><a href={results[i]} target="_blank">{this.state.topicName + ' ' + this.state.subtopicName + ' Link'}</a></li>;
-        linksArray.push(listItem);
+    if (typeof results[0] !== "undefined"){
+      for (var i=0; i < 5; i++){
+          var listItem = <li key={i}><a href={results[i].link} target="_blank">{results[i].title}</a></li>;
+          linksArray.push(listItem);
+      }
     }
 
     let settings = {
@@ -49,11 +51,9 @@ export default class Stackoverflow extends React.Component{
     }
 
     return (
-      <div className="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white resources">
-
-        <Slider {...settings}>
+      <div>
+          <br />
           {linksArray}
-        </Slider>
 
       </div>
     );
