@@ -31,7 +31,7 @@ export default class Videos extends React.Component{
 
   componentDidUpdate(prevProps, prevState) {
       if (prevState.subtopicDbId !== this.state.subtopicDbId && typeof this.state.subtopicName !== "undefined") {
-          helpers.youtubeQuery(this.state.topicName + ' ' + this.state.subtopicName)
+          helpers.youtubeQuery(this.state.topicName, this.state.subtopicName)
               .then(function(data) { 
                   this.setState({ videos: data });
                   console.log(this.state.videos);
@@ -46,8 +46,8 @@ export default class Videos extends React.Component{
 
     if (typeof results[0] !== "undefined"){
 
-      for (var i = 0; i < 10; i++) {
-          var listItem = <div key={i}><ReactPlayer width='100%' height='150px' url= {videoURL + this.state.videos[i]} controls/><br/></div>
+      for (var i = 0; i < 5; i++) {
+          var listItem = <div key={i}><ReactPlayer width='100%' height='150px' url= {videoURL + results[i]} controls/><br/></div>
           videoArray.push(listItem);
       }
 

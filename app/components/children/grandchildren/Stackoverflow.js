@@ -26,7 +26,7 @@ export default class Stackoverflow extends React.Component{
 
   componentDidUpdate(prevProps, prevState) {
       if (prevState.subtopicDbId !== this.state.subtopicDbId && typeof this.state.subtopicName !== "undefined") {
-          helpers.stackoverflowQuery(this.state.topicName + ' ' + this.state.subtopicName).then(function(data) {
+          helpers.stackoverflowQuery(this.state.topicName, this.state.subtopicName).then(function(data) {
               this.setState({ links: data });
               console.log(this.state.links);
           }.bind(this));

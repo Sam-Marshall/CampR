@@ -5,34 +5,79 @@ var youtubeAPI = "AIzaSyDDisdE7IU5DjOyr75z8hDXP2ytiQc7aS4";
 // Helper functions for making API Calls
 var helper = {
 
-    youtubeQuery: function(searchTerm) {
+    youtubeQuery: function(topic, subtopic) {
+        var searchTerm = topic + ' ' + subtopic;
 
         var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=" + searchTerm + "&key=" + youtubeAPI;
 
         return axios
             .get(queryURL)
-            .then(response => response.data.items.filter(i => i.id.videoId).map(i => i.id.videoId));
+            .then(function(response) {
+                if (typeof response.data.items[0] !== "undefined") {
+                    var linkArray = [];
+                    for (var i = 0; i < response.data.items.length; i++) {
+                        if (typeof response.data.items[i].id.videoId !== "undefined") {
+                            linkArray.push(response.data.items[i].id.videoId);
+                        }
+                    }
+                    console.log(linkArray);
+                    return linkArray;
+                } else {
+                    queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=" + topic + "&key=" + youtubeAPI;
+                    return axios.get(queryURL).then(function(response) {
+                        var linkArray = [];
+                        for (var i = 0; i < response.data.items.length; i++) {
+                            if (typeof response.data.items[i].id.videoId !== "undefined") {
+                                linkArray.push(response.data.items[i].id.videoId);
+                            }
+                        }
+                        console.log(linkArray);
+                        return linkArray;
+                    });
+
+                }
+
+            });
 
     },
 
-    stackoverflowQuery: function(searchTerm) {
+    stackoverflowQuery: function(topic, subtopic) {
+        var term;
 
-        var term = searchTerm.replace("Introduction", "");
-        console.log(term);
+        subtopic = subtopic.replace('Introduction', '');
+        term = topic + ' ' + subtopic;
 
-        var queryURL = "https://api.stackexchange.com/2.2/search/advanced?sort=votes&q=" + term + "&accepted=True&title=" + term + "&site=stackoverflow";
+        var queryURL = "https://api.stackexchange.com/2.2/search/advanced?sort=votes&q=" + term + "&accepted=True&title=" + topic + "&site=stackoverflow";
 
         return axios
             .get(queryURL)
             .then(function(response) {
-                var linkArray = [];
-                for (var i = 0; i < response.data.items.length; i++) {
-                    var overflowObject = {};
-                    overflowObject.link = response.data.items[i].link;
-                    overflowObject.title = response.data.items[i].title;
-                    linkArray.push(overflowObject);
+                if (typeof response.data.items[0] !== "undefined") {
+                    var linkArray = [];
+                    for (var i = 0; i < response.data.items.length; i++) {
+                        var overflowObject = {};
+                        overflowObject.link = response.data.items[i].link;
+                        overflowObject.title = response.data.items[i].title;
+                        linkArray.push(overflowObject);
+                    }
+                    console.log(linkArray);
+                    return linkArray;
+                } else {
+                    queryURL = "https://api.stackexchange.com/2.2/search/advanced?sort=votes&q=" + topic + "&accepted=True&title=" + topic + "&site=stackoverflow";
+                    return axios.get(queryURL).then(function(response) {
+                        var linkArray = [];
+                        for (var i = 0; i < response.data.items.length; i++) {
+                            var overflowObject = {};
+                            overflowObject.link = response.data.items[i].link;
+                            overflowObject.title = response.data.items[i].title;
+                            linkArray.push(overflowObject);
+                        }
+                        console.log(linkArray);
+                        return linkArray;
+                    });
+
                 }
-                return linkArray;
+
             });
 
     },
